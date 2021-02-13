@@ -15,7 +15,7 @@ The app will have the  following features:
   - Timeline to views followed channels and see grades and new assignments.
   - Forums for discussions and questions.
   - The ability to see members of class, sections and groups. 
-  - The ability to view a profile along with its information, like the courses, projects and groups. 
+  - The ability to view a profile along with its information, like the courses, projects, and groups. 
   - The ability to follow a person and see their posts and projects.
   - Calendar to show and plan the upcoming events.
-  - Each course timeline will be divided based on assignments and weeks and months.
+  - Course timeline organized based on assignments, and weeks and months.
