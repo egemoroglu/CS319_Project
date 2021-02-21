@@ -1,6 +1,6 @@
 # CS319_Project
 
-The app will be a tool used by students, teaching assistants and instructors to form project groups and classes and enable them to interact with and evaluate each other during the various levels of the project.
+The app will be used by students, teaching assistants and instructors to form project groups and classes and enable them to interact with and evaluate each other during the various levels of the project.
 The app will have the  following features:
 
   - Account-based.
