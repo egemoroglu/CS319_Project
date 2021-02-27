@@ -4,7 +4,7 @@ The app will be used by students, teaching assistants and instructors to form pr
 The app will have the  following features:
 
   - Account-based.
-  - Group formation for projects.
+  - Group finder for projects based on skills and whether a person is looking for a group or a group looking for a member.
   - Evaluation for each member by group mates and instructors, anonymously or publicly.
   - Assessment system for each assignment in the project. 
   - Viewing grades and the average of group evaluations if allowed by instructors.
@@ -19,3 +19,5 @@ The app will have the  following features:
   - The ability to follow a person and see their posts and projects.
   - Calendar to show and plan the upcoming events.
   - Course timeline organized based on assignments, and weeks and months.
+  - Statistics of averages grades given to assignments and to members and evaluations of others.
+  - Chemistry of a group based on evaluations by members.
