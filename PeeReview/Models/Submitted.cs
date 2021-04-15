@@ -1,6 +1,6 @@
 namespace PeeReview.Models
 {
-    public class Submitted
+    public class Submitted //Needs more definition
     {
         
     }

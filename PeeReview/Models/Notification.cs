@@ -1,6 +1,6 @@
 namespace PeeReview.Models
 {
-    public class Notification
+    public class Notification //TODO
     {
         
     }

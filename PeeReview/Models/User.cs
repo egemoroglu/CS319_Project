@@ -6,14 +6,20 @@ using PeeReview.Models;
 
 namespace PeeReview.Models
 {
-    abstract class User
+    public abstract class User
     {
-        //User(string name, string surName, Picture pic); OOps! No constructors allowed in interfaces!
-        
-        public string name {get; private set; }
-        public string surName { get; private set; }
-        public string email { get; private set; }
-        public Picture pic { get; private set; }
+        public User(string name, string surName, string email, Picture pic)
+        {
+            Name = name;
+            SurName = surName;
+            Email = email;
+            Pic = pic;
+        }
+
+        public string Name {get; private set; }
+        public string SurName { get; private set; }
+        public string Email { get; private set; }
+        public Picture Pic { get; private set; }
         private Inbox inbox; // getter needs to be written using Inbox class methods
         List<Course> courses { get;}
         List<Project> projects { get;}

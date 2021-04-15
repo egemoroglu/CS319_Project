@@ -3,8 +3,11 @@ using PeeReview.Controllers;
 
 namespace PeeReview.Models
 {
-    public class Course
+    public class Course //Possible need for chamge since properties with getters only are readonly
     {
+        private List<Project> projects;
+        private List<Group> groups;
+        private List<Student> students;
         public string courseName { get; private set; }
         public string courseCode { get; private set; }
         public int courseGroupPolicy { get; private set; }
@@ -13,14 +16,32 @@ namespace PeeReview.Models
         public List<Forum> forums { get; }
         public List<Instructor> instructors { get; }
         public List<Grader> graders { get; }
-        public List<Student> students { get; }
-        public List<Group> groups { get; }
         public List<Submitted> submittedAssignments { get; }
         public AssignmentController assignments { get; }
         public GroupController groupController { get; }
         public ForumController forumController { get; }
 
         // implementation later
+        public List<Student> getStudents()
+        {
+            return students;
+        }
+
+        public List<Project> getProjects()
+        {
+            return projects;
+        }
+
+        public List<Group> getGroups()
+        {
+            return groups;
+        }
+
+        public void addProject(Project project)
+        {
+            projects.Add(project);    
+        }
+
         public bool addInstructor(Instructor intsr) //using a list here will complicate things 
         {
             return false;

@@ -1,6 +1,6 @@
 namespace PeeReview.Models
 {
-    public class Inbox
+    public class Inbox //Probably will be deleted
     {
         
     }

@@ -1,6 +1,6 @@
 namespace PeeReview.Models
 {
-    public class Instructor
+    public class Instructor //TODO
     {
         
     }

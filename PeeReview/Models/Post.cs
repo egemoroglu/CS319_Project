@@ -1,6 +1,6 @@
 namespace PeeReview.Models
 {
-    public class Post
+    public class Post //Probably to be deleted
     {
         
     }

@@ -1,6 +1,6 @@
 namespace PeeReview.Models
 {
-    public class Question
+    public class Question //What exactly??
     {
         
     }
