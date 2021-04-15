@@ -1,6 +1,6 @@
 namespace PeeReview.Models
 {
-    public class Forum
+    public class Forum //To be deleted/replaced
     {
         
     }
