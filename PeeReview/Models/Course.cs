@@ -3,7 +3,7 @@ using PeeReview.Controllers;
 
 namespace PeeReview.Models
 {
-    public class Course //Possible need for chamge since properties with getters only are readonly
+    public class Course //Possible need for change since properties with getters only are readonly
     {
         private List<Project> projects;
         private List<Group> groups;
