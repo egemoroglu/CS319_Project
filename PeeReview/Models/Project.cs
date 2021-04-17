@@ -5,21 +5,12 @@ namespace PeeReview.Models
 {
     public class Project
     {
-        private Forum forum;
         public string Title { get; private set; }
         public string Description { get; private set; }
         public int groupSize { get; private set; }
 
         public double grade;
 
-        public Forum getForum() {  return forum; }
-        public void createForum()
-        {
-            if (forum is object)
-            { //TODO throw exception/display warning
-            }
-            else {forum = new Forum();}
-        }
 
         public void setGrade(double grade)
         {

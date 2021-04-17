@@ -11,15 +11,11 @@ namespace PeeReview.Models
         public string courseName { get; set; }
         public string courseCode { get; set; }
         public int courseGroupPolicy { get; private set; }
-        public int forumRestrictions { get; private set; }
-        public Forum mainForum { get; }
-        public List<Forum> forums { get; }
         public List<Instructor> instructors { get; }
         public List<Grader> graders { get; }
         public List<Submitted> submittedAssignments { get; }
         public AssignmentController assignments { get; }
         public GroupController groupController { get; }
-        public ForumController forumController { get; }
 
 
         public Course()
@@ -75,15 +71,8 @@ namespace PeeReview.Models
         {
             return false;
         }
-        //maybe use the name or code of forum instead??
-        public bool addForum(Forum newForum)
-        {
-            return false;
-        }
-        public bool removeForum(Forum forumToRemove)
-        {
-            return false;
-        }
+
+
         
 
     }

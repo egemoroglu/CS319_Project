@@ -20,7 +20,6 @@ namespace PeeReview.Models
         public string SurName { get; private set; }
         public string Email { get; private set; }
         public Picture Pic { get; private set; }
-        private Inbox inbox; // getter needs to be written using Inbox class methods
         List<Course> courses { get;}
         List<Project> projects { get;}
         List<Notification> notifications { get;}
@@ -35,7 +34,7 @@ namespace PeeReview.Models
             return false;
         }
 
-        void sendMessage(Message msg){ }
+    
 
 
 
