@@ -8,8 +8,8 @@ namespace PeeReview.Models
         private List<Project> projects;
         private List<Group> groups;
         private List<Student> students;
-        public string courseName { get; private set; }
-        public string courseCode { get; private set; }
+        public string courseName { get; set; }
+        public string courseCode { get; set; }
         public int courseGroupPolicy { get; private set; }
         public int forumRestrictions { get; private set; }
         public Forum mainForum { get; }
@@ -20,6 +20,11 @@ namespace PeeReview.Models
         public AssignmentController assignments { get; }
         public GroupController groupController { get; }
         public ForumController forumController { get; }
+
+
+        public Course()
+        {
+        }
 
         // implementation later
         public List<Student> getStudents()

@@ -10,6 +10,8 @@ namespace PeeReview.Models
         public string Description { get; private set; }
         public int groupSize { get; private set; }
 
+        public double grade;
+
         public Forum getForum() {  return forum; }
         public void createForum()
         {
@@ -18,7 +20,12 @@ namespace PeeReview.Models
             }
             else {forum = new Forum();}
         }
-        
+
+        public void setGrade(double grade)
+        {
+            this.grade = grade;
+        }
+
 
         public List<Group> groups { get; }
         public Course course { get; private set; }

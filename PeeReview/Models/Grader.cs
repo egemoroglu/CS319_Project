@@ -14,14 +14,22 @@ namespace PeeReview.Models
 
         protected void gradeProject(Project project, int grade)
         {
-            //TODO
+            project.setGrade(grade);
         }
         protected void gradeAssignment(Assignment assignment, int grade)
         {
-            //TODO
+            assignment.setGrade(grade);
         }
-        protected void extendDeadlineProject (Project project, float hours){}
-        protected void extendDeadlineAssignment (Assignment assignment, float hours){}
+        protected void extendDeadlineProject (Project project, float hours){
+            //TODO
+            //In this method we should get the project's deadline and add hours parameter to the deadline.
+            //So, Date class should be added.
+        }
+        protected void extendDeadlineAssignment (Assignment assignment, float hours){
+            //TODO
+            //In this method we should get the assignment's deadline and add hours parameter to the deadline.
+            //So, Date class should be added.
+        }
 
         public List<Group> getGroupsInCourse(Course course)
         {
@@ -31,6 +39,16 @@ namespace PeeReview.Models
         public List<Student> getStudentsInGroup(Group group) //Is this really needed?
         {
             return group.getStudents();
+        }
+
+        public List<Project> getProjects()
+        {
+            return projects;
+        }
+
+        public List<Instructor> getRelevantInstructors()
+        {
+            return relevantInstructors;
         }
     }
 }
