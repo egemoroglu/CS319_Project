@@ -2,40 +2,40 @@ namespace PeeReview.Models
 {
     public class Notification //TODO
     {
-    private string body;
-        private string head;
-        private Date date;
-        private User user;
+        private string text;
+        private string title;
+        //private Date date;
+        private User sender;
 
-        public string getHead()
+        public string getText()
         {       
-            return head;
+            return text;
         }
 
-        private void setHead(string head)
+        private void setText(string text)
         {       
-            this.head = head;
+            this.text = text;
         }
 
-        public string getBody()
+        public string getTitle()
         {       
-            return body;
+            return title;
         }
 
-        private void setBody(string body)
+        private void setTitle(string title)
         {       
-            this.body = body;
+            this.title = title;
         }
 
-        public Date getDate()
-        {
-            return Date;
-        }
+        //public Date getDate()
+        //{
+          //  return Date;
+        //}
 
-        private void setDate(Date date)
-        {
-            this.date = date;
-        }
+        //private void setDate(Date date)
+        //{
+          //  this.date = date;
+        //}
 
         public User getSender()
         {
@@ -44,7 +44,7 @@ namespace PeeReview.Models
 
         private void setSender(User sender)
         {
-            this.sender = sender
+            this.sender = sender;
         }
         
     }
