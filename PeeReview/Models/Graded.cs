@@ -1,6 +1,6 @@
 namespace PeeReview.Models
 {
-    public class Graded
+    public class Graded //Interface?? 
     {
         
     }
