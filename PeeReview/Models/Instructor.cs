@@ -18,12 +18,12 @@ namespace PeeReview.Models
 
         public void addGrader(Grader grader, Course course)
         {
-            course.graders.Add(grader);
+            course.addGrader(grader);
         }
 
         public void removeGrader(Grader grader, Course course)
         {
-            course.graders.Remove(grader);
+            course.removeGrader(grader);
         }
 
         public void setProject(Course course, Project project)
@@ -51,14 +51,14 @@ namespace PeeReview.Models
 
         public bool kickStudentFromCourse(Student student, Course course)
         {
-            course.getStudents().Remove(student);
+            course.removeStudent(student);
 
             return true;
         }
 
         public bool addStudentToCourse(Student student, Course course)
         {
-            course.getStudents().Add(student);
+            course.addStudent(student);
 
             return true;
         }
@@ -79,14 +79,14 @@ namespace PeeReview.Models
 
         public bool assignStudentToGroup(Student student, Group group, Course courseName)
         {
-            group.getStudents().Add(student);
+            group.addStudent(student);
 
             return true;
         }
 
         public bool assignTAToGroup(Grader grader, Group group)
         {
-            group.getGraders().Add(grader);
+            group.addGrader(grader);
             return true;
 
         }

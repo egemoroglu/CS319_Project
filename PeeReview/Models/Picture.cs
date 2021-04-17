@@ -1,7 +1,5 @@
 namespace PeeReview.Models
 {
-    public class Picture //TODO
-    {
-        
-    }
+    public class Picture //TODO 
+    { }
 }

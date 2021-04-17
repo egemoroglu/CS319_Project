@@ -85,9 +85,9 @@ namespace PeeReview.Models
             return averageEvaluation;
         }
 
-        public bool updateEval(int score, double chem)
+        public void updateEval(int score, double chem)
         {
-            return false; //TODO
+             //TODO
         }
     }
 }

@@ -1,6 +1,7 @@
 namespace PeeReview.Models
 {
-    public class Comment // to be deleted/changed
+    public class Comment // To be deleted/changed, for evaluation text as a note to evaluation 
+                        //  Title and text and date
     {
         
     }
