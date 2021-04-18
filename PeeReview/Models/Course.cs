@@ -13,7 +13,7 @@ namespace PeeReview.Models
         public int courseGroupPolicy { get; private set; }
         public List<Instructor> instructors { get; }
         public List<Grader> graders { get; }
-        public List<Submitted> submittedAssignments { get; }
+        public List<Submission> submittedAssignments { get; }
         public AssignmentController assignments { get; }
         public GroupController groupController { get; }
 

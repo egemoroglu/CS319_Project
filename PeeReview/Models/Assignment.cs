@@ -13,9 +13,6 @@ namespace PeeReview.Models
             this.title = title;
             this.description = description;
         }
-
-        
-        
         public void setGrade(double grade)
         {
             this.grade = grade;
