@@ -24,7 +24,7 @@ namespace PeeReview.Models
         public void addCriteria(string newCriteria)
         {
             Criteria.Add(newCriteria);
-            CriteriaAndGrade.Add(newCriteria,0); //assigning 0 as a default value for grade
+            CriteriaAndGrade.Add(newCriteria,-1); //assigning 0 as a default value for grade
         }
 
         public void removeCirteria(string criteriaToRemove)

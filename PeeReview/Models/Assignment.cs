@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace PeeReview.Models
 {
     public class Assignment
@@ -6,8 +8,12 @@ namespace PeeReview.Models
         public double grade;
         public string title;
         public string description;
+        public List<Submission> Submissions;
+        public List<CompletedSubmission> CompletedSubmissions;
         //Date class should be added.
         //public Date deadline;
+        //preview 
+        
         public Assignment(string title,string description)
         {
             this.title = title;

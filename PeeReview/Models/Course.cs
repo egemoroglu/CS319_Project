@@ -4,13 +4,14 @@ using PeeReview.Controllers;
 namespace PeeReview.Models
 {
     public class Course //Possible need for change since properties with getters only are readonly
+    // Maybe Instructor as a friend class
     {
         private List<Project> projects;
         private List<Group> groups;
         private List<Student> students;
         public string courseName { get; set; }
-        public string courseCode { get; set; }
-        public int courseGroupPolicy { get; private set; }
+        public string courseCode { get;  set; }
+        public int courseGroupPolicy { get;  set; }
         public List<Instructor> instructors { get; }
         public List<Grader> graders { get; }
         public List<Submission> submittedAssignments { get; }

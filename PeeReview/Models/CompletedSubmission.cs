@@ -3,7 +3,7 @@ using NotImplementedException = System.NotImplementedException;
 
 namespace PeeReview.Models
 {
-     class CompletedSubmission : Submission  //contains a submission after done and closed, now we can review it and evaluate it
+     public class CompletedSubmission : Submission  //contains a submission after done and closed, now we can review it and evaluate it
     {
         private List<Review> Reviews { get; }
         private Assessment assessment;
