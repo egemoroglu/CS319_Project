@@ -6,75 +6,49 @@ namespace PeeReview.Models
     public class Course //Possible need for change since properties with getters only are readonly
     // Maybe Instructor as a friend class
     {
-        private List<Project> projects;
-        private List<Group> groups;
-        private List<Student> students;
-        public string courseName { get; set; }
-        public string courseCode { get;  set; }
-        public int courseGroupPolicy { get;  set; }
-        public List<Instructor> instructors { get; }
-        public List<Grader> graders { get; }
-        public List<Submission> submittedAssignments { get; }
-        public AssignmentController assignments { get; }
-        public GroupController groupController { get; }
+        public List<Project> Projects { get; }
+        public List<Group> Groups { get; }
+        public List<Student> Students { get; }
+        public string CourseName { get; set; }
+        public string CourseCode { get;  set; }
+        public int CourseGroupPolicy { get;  set; }
+        public Instructor Instructor { get; private set; }
+        public List<Grader> Graders { get; }
+        public List<Submission> SubmittedAssignments { get; }
+        public AssignmentController Assignments { get; }
+        public GroupController GroupController { get; }
+        public defaultSetUniqueID ID { get; private set; }
 
-
-        public Course()
+        public Course(string courseName, string courseCode, Instructor instructor)
         {
+            CourseName = courseName;
+            CourseCode = courseCode;
+            Instructor = instructor;
+            ID.setUniqueID();
         }
 
         // implementation later
-        public List<Student> getStudents()
-        {
-            return students;
-        }
-
-        public List<Project> getProjects()
-        {
-            return projects;
-        }
-
-        public List<Group> getGroups()
-        {
-            return groups;
-        }
-
         public void addProject(Project project)
         {
-            projects.Add(project);    
+            Projects.Add(project);    
         }
-
-        public bool addInstructor(Instructor intsr) //using a list here will complicate things 
-        {
-            return false;
-        }
-
-        public bool removeInstrucotr(Instructor instr)
-        {
-            return false;
-        }
-
-        public bool addGrader(Grader grader)
-        {
-            return false;
-        }
-
-        public bool removeGrader(Grader grader)
-        {
-            return false;
-        }
-        public bool addStudent(Student student)
-        {
-            return false;
-        }
-
-        public bool removeStudent(Student student)
-        {
-            return false;
-        }
-
-
         
+        public void addGrader(string graderName)
+        {
+            
+        }
 
+        public void removeGrader(string graderName)
+        {
+           
+        }
+        public void addStudent(string studentName)
+        {
+        }
+
+        public void removeStudent(string studentName)
+        {
+            
+        }
     }
 }

@@ -6,73 +6,59 @@ namespace PeeReview.Models
 {
     public class Instructor : User
     {
-        private List<Grader> graders;
-        private List<Course> courses;
+        public List<Grader> Graders { get; }
+        public List<Course> Courses { get; }
+
         public Instructor(string name, string surname, string email, Picture pic)
             : base(name, surname, email, pic) { }
 
-        public List<Grader> getGraders()
+
+        public void addGrader(string graderName, string courseCode)
         {
-            return graders;
+            //TODO get grader and course assign them to each other
         }
 
-        public void addGrader(Grader grader, Course course)
+        public void removeGrader(string graderName, string courseCode)
         {
-            course.addGrader(grader);
+            //TODO get grader and course delete
+        }
+        
+        public void gradeProject(Project project, int grade)
+        {
+
         }
 
-        public void removeGrader(Grader grader, Course course)
+        public void gradeAssignment(Assignment assignment, int grade)
         {
-            course.removeGrader(grader);
+
+            
         }
 
-        public void setProject(Course course, Project project)
+        public void extendDeadlineProject(Project project, double hours)
         {
-            //TODO
+
         }
 
-        public bool gradeProject(Project project, int grade)
+        public void kickStudentFromCourse(Student student, Course course)
         {
-            //TODO
-            return false;
+
         }
 
-        public bool gradeAssignment(Assignment assignment, int grade)
+        public void addStudentToCourse(Student student, Course course)
         {
-            //TODO
-            return false;
+
         }
 
-        public bool extendDeadlineProject(Project project, double hours)
+        public void createNewCourse(string courseName, string courseCode)
         {
-            //TODO
-            return false;
-        }
+          //  Course course = new Course() { CourseName = courseName, CourseCode = courseCode };
 
-        public bool kickStudentFromCourse(Student student, Course course)
-        {
-            course.removeStudent(student);
-
-            return true;
-        }
-
-        public bool addStudentToCourse(Student student, Course course)
-        {
-            course.addStudent(student);
-
-            return true;
-        }
-
-        public Course initializeNewCourse(string courseName, string courseCode)
-        {
-            Course course = new Course() { courseName = courseName, courseCode = courseCode };
-
-            return course;
+          //  return course;
         }
 
         public bool removeCourse(Course course)
         {
-            courses.Remove(course);
+            Courses.Remove(course);
 
             return true;
         }
@@ -93,12 +79,12 @@ namespace PeeReview.Models
 
         public List<Group> getGroupsOfCourse(Course course)
         {
-            return course.getGroups();
+            return course.Groups;
         }
 
         public List<Student> getStudentsWithoutGroups(Course course)
         {
-            return course.getStudents();
+            return course.Students;
         }
 
         public bool randomlyAssignStudentsToGroups(Course course, int groupSize)
@@ -107,27 +93,21 @@ namespace PeeReview.Models
             return false;
         }
 
-        public bool createGroupFromOutsiders(Course course, int groupSize)
+        public void createGroupFromOutsiders(Course course, int groupSize)
         {
-            //TODO
-            return false;
+  
         }
 
-        public List<Course> getCourses()
+
+
+        private void addCoursesGiven(Course courses)
         {
-            return courses;
+
         }
 
-        private bool addCoursesGiven(Course courses)
+        private void removeCoursesGiven(Course courses)
         {
-            //TODO
-            return false;
-        }
 
-        private bool removeCoursesGiven(Course courses)
-        {
-            //TODO
-            return false;
         }
 
     }

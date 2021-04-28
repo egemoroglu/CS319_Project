@@ -1,51 +1,24 @@
+using System;
+
 namespace PeeReview.Models
 {
-    public class Notification //TODO
+    public class Notification 
     {
-        private string text;
-        private string title;
-        //private Date date;
-        private User sender;
+        public string Text { get; private set; }
 
-        public string getText()
-        {       
-            return text;
-        }
+        public string Title { get; private set; }
 
-        private void setText(string text)
-        {       
-            this.text = text;
-        }
+        public DateTime NotificationDateTime { get;}
 
-        public string getTitle()
-        {       
-            return title;
-        }
+        public User Sender { get; private set; }
 
-        private void setTitle(string title)
-        {       
-            this.title = title;
-        }
-
-        //public Date getDate()
-        //{
-          //  return Date;
-        //}
-
-        //private void setDate(Date date)
-        //{
-          //  this.date = date;
-        //}
-
-        public User getSender()
+        Notification(string title, string text, string senderName)
         {
-            return sender;
+            Title = title;
+            Text = text;
+            //TODO find user and assign
+            NotificationDateTime = DateTime.Now;
+            
         }
-
-        private void setSender(User sender)
-        {
-            this.sender = sender;
-        }
-        
     }
 }

@@ -1,21 +1,21 @@
 using System;
+using System.Security.AccessControl;
 
 namespace PeeReview.Models
 {
-    public abstract class Comment : Preview //parent of Preview and repsonse
+    public abstract class Comment : Note //parent of Preview and response
     {
         public string Title { get; private set; }
         public string TextContent { get; private set; }
         public string Author { get; private set; }
-        public int UniqueId { get; private set; }
-        public Comment Response { get;  set; }
-        //public Date time { get; private set; }
+
+        public DateTime postDateTime { get; private set; }
+        
+        public Comment Response { get; }
         protected Comment(string title, string textContent, string author) : base (author, textContent)
         {
             Title = title;
-            TextContent = textContent;
-            Author = author;
-            //TODO set uniqueID
+            postDateTime = DateTime.Now;
         }
 
         public void editTitle(string newTitle)

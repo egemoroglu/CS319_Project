@@ -12,10 +12,7 @@ namespace PeeReview.Models
         //courseToGrade is redundant since we have courses already
         private List<Project> projects;
 
-        protected void gradeProject(Project project, int grade)
-        {
-            project.setGrade(grade);
-        }
+
         protected void gradeAssignment(Assignment assignment, int grade)
         {
             assignment.setGrade(grade);
@@ -33,7 +30,7 @@ namespace PeeReview.Models
 
         public List<Group> getGroupsInCourse(Course course)
         {
-            return course.getGroups();
+            return course.Groups;
         }
 
         public List<Student> getStudentsInGroup(Group group) //Is this really needed?

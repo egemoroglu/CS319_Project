@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using NotImplementedException = System.NotImplementedException;
 
@@ -7,17 +8,23 @@ namespace PeeReview.Models
     //Submission, List Files, Title, date, Comment 
     {
         public string Name { get; private set; }
-        public Preview Preview { get; private set; }
-        //public Date time { get; private set; }
+        public Note Overview { get; private set; }
+
+        public string SubmitterName { get; private set; }
+        public DateTime SubmissionDateTime { get; private set; }
+
         //file 
-        public int UniqueID { get; private set; } //make this an interface?
+        public defaultSetUniqueID ID { get; } 
 
 
-        protected Submission(string name, Preview preview)
+        protected Submission(string name, string overview, string submitterName)
         {
             Name = name;
-            Preview = preview;
-            //TODO set date and time and unique ID
+            SubmitterName = submitterName;
+            Overview = new Note(SubmitterName, overview);
+            ID.setUniqueID();
+            SubmissionDateTime = DateTime.Now;
+     
         }
 
 

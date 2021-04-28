@@ -8,8 +8,9 @@ namespace PeeReview.Models
         private List<Review> Reviews { get; }
         private Assessment assessment;
         public Evaluation evaluations; //includes criteria and grades, controller should deal with adding them
-        
-        protected CompletedSubmission(string name, Preview preview, Assessment assessment) : base(name, preview)
+        public string SubmitterName { get; private set; }
+
+        public CompletedSubmission(string name, string overview, string submitterName,Assessment assessment) : base(name, overview, submitterName)
         {
             this.assessment = assessment;
         }

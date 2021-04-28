@@ -14,7 +14,10 @@ namespace PeeReview.Models
             SurName = surName;
             Email = email;
             Pic = pic;
+            ID.setUniqueID();
         }
+
+        public defaultSetUniqueID ID { get;}
 
         public string Name {get; private set; }
         public string SurName { get; private set; }

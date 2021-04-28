@@ -5,51 +5,25 @@ namespace PeeReview.Models
 {
     public class Student : User
     {
-        private List<Group> groups;
-        private List<Assignment> assignments;
-        private List<Project> projects;
+        public List<Group> Groups { get; private set; }
+        public List<Assignment> Assignments { get; private set; }
+        public List<Project> Projects { get; private set; }
+
         public Student(string name, string surname,string email, Picture pic )
             : base( name,  surname, email,  pic ) { }
+        
+ 
 
-        public List<Group> getGroups()
+
+        public void sendRequestToGroup(Course course, string groupName)
         {
-            return groups;
+            //TODO find group by name 
         }
 
-        public List<Project> getGroupInCourse(Course course)
+        public void leaveGroup(string groupName)
         {
-            return course.getProjects();
+            //TODO find group by name 
         }
-
-        public List<Project> getProjects()
-        {
-            return projects;
-        }
-
-        public List<Assignment> getAssignments()
-        {
-            return assignments;
-        }
-
-        public bool sendRequestToGroup(Course course, Group group)
-        {
-            return false; //TODO
-        }
-
-        public void leaveGroup()
-        {
-            //TODO
-        }
-
-        public void createGroup()
-        {
-            //TODO
-        }
-
-        public void deleteGroup()
-        {
-            //TODO
-        }
-
+        
     }
 }
