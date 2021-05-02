@@ -18,8 +18,12 @@ namespace PeeReview.Models
             
             project.setDeadline(newDeadlineString);
             //  return View(The view) TODO    
-                
-
+            
+        }
+        
+        public void endorse(Comment  comment)
+        {
+            comment.setToEndorsed(this.Name); 
         }
         protected void extendDeadlineAssignment (Assignment assignment, string newDeadlineString){
             assignment.setDeadline(newDeadlineString);

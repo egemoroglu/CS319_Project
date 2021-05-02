@@ -32,6 +32,11 @@ namespace PeeReview.Models
             assignment.setGrade(grade);
         }
 
+        public void endorse(Comment  comment)
+        {
+            comment.setToEndorsed(this.Name); 
+        }
+
         protected void extendDeadlineProject (Project project, string newDeadlineString){
             
             project.setDeadline(newDeadlineString);

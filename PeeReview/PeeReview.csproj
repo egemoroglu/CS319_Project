@@ -137,7 +137,7 @@
         <Compile Include="Models\Graph.cs" />
         <Compile Include="Models\Group.cs" />
         <Compile Include="Models\Instructor.cs" />
-        <Compile Include="Models\IOberver.cs" />
+        <Compile Include="Models\IOberverNotification.cs" />
         <Compile Include="Models\Notification.cs" />
         <Compile Include="Models\Picture.cs" />
         <Compile Include="Models\Note.cs" />

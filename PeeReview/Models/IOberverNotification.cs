@@ -63,7 +63,7 @@ namespace PeeReview.Models
 
     // Concrete Observers react to the updates issued by the Subject they had
     // been attached to.
-    class ConcreteObserverA : IObserverNotification
+    public class ConcreteObserver : IObserverNotification //this should in controller
     {
         public void Update(SubjectNotification subject,List<Notification> notifications, string title, string content)
         {            
