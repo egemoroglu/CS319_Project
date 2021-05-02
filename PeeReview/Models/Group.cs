@@ -8,17 +8,14 @@ namespace PeeReview.Models
         private int uniqueCode;
         private double chemstryPoint; //double was favoured for smoother usage 
         private double averageEvaluation; // Will become multiple for each category
-        
+        public Evaluation GroupEvaluation { get; private set; }
 
-        private List<Student> students;
-        private List<Project> projects;
-        private List<Grader> graders;
-        private List<Assignment> assignments;
+        public List<Student> students { get; private set; }
+        public List<Project> projects{ get; private set; }
+        public List<Grader> graders{ get; private set; }
+        public List<Assignment> assignments{ get; private set; }
 
-        public List<Student> getStudents()
-        {
-            return students;
-        }
+
 
         public void addStudent(Student student)
         {
@@ -29,10 +26,6 @@ namespace PeeReview.Models
             students.Remove(student);
         }
 
-        public List<Project> getProjects()
-        {
-            return projects;
-        }
         
         public void addProject(Project project)
         {
@@ -42,11 +35,7 @@ namespace PeeReview.Models
         {
             projects.Remove(project);
         }
-        public List<Assignment> getAssignments()
-        {
-            return assignments;
-        }
-        
+
         public void addAssignment(Assignment assignment)
         {
             assignments.Add(assignment);
@@ -55,11 +44,7 @@ namespace PeeReview.Models
         {
             assignments.Remove(assignment);
         }
-        
-        public List<Grader> getGraders()
-        {
-            return graders;
-        }
+
         
         public void addGrader(Grader grader)
         {

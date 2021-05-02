@@ -35,7 +35,7 @@ namespace PeeReview.Models
 
         public List<Student> getStudentsInGroup(Group group) //Is this really needed?
         {
-            return group.getStudents();
+            return group.students;
         }
 
         public List<Project> getProjects()

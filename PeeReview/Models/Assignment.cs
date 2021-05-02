@@ -13,7 +13,7 @@ namespace PeeReview.Models
         public string description;
         public List<Submission> Submissions;
         public List<CompletedSubmission> CompletedSubmissions;
-
+        public Assignment nextIteration { get; private set; }
         public DateTime AssignmentDateTime { get; }
 
         public DateTime deadlineDateTime;
