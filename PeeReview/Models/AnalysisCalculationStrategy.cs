@@ -5,24 +5,21 @@ namespace PeeReview.Models
 {
     public interface AnalysisCalculationStrategy
     {
-        Dictionary<string, double> calcAvgOfAvgs();
-        Dictionary<string, string> lowOutlierEachCriteria();
-        Dictionary<string, string> highOutlierEachCriteria();
+        Dictionary<string, double> calcAvgOfAvgs( Group AnalyzedGroup);
+        Dictionary<string, string> lowOutlierEachCriteria( Group AnalyzedGroup);
+        Dictionary<string, string> highOutlierEachCriteria( Group AnalyzedGroup);
     }
 
     public class GroupAnalysisCalculationStrategy: AnalysisCalculationStrategy
     {
-        private StudentCalculateAverageEvaluationsStrategy StudentCAES;
-        public Group AnalyzedGroup { get; private set; }
-        
-        
+       
         /*
          *In this method we visit every student element in the group then we get his average eval for each criteria,
          * Then we add this Dictionary element in a new dictionary that takes a criteria and a list of grades
          * Afterwards, we call a method to get the average of the values in the dictionary and return a new dictionary 
          * with these values
          */
-        public Dictionary<string, double> calcAvgOfAvgs()
+        public Dictionary<string, double> calcAvgOfAvgs( Group AnalyzedGroup)
         {
             Dictionary<string, List<double>> tempAvgs = new Dictionary<string, List<double>>(); //We save the avgs for each criteria here
             Dictionary<string, double> studentsTemps = new Dictionary<string, double>(); // This one holds the average for each student
@@ -59,16 +56,48 @@ namespace PeeReview.Models
             return avgForEachCriteriaReturned;
         }
 
-        public Dictionary<string, string> lowOutlierEachCriteria()
+        public Dictionary<string, string> lowOutlierEachCriteria( Group AnalyzedGroup)
         {
-            
-            throw new System.NotImplementedException();
+            Dictionary<string, string> ouliersReturned = new Dictionary<string, string>();
+            Dictionary<string, double> tempStudentAvg = new Dictionary<string, double>();
+            Dictionary<string, double> groupAvg = calcAvgOfAvgs(AnalyzedGroup);
+            foreach (var student in AnalyzedGroup.students)
+            {
+                
+                tempStudentAvg = student.calcAvg();
+                foreach (KeyValuePair<string, double> criteria in tempStudentAvg)
+                {
+                    if (groupAvg[criteria.Key] >= (criteria.Value + 2))
+                    {
+                        ouliersReturned.Add(criteria.Key, student.Name);
+                    }
+                    
+                }
+            }
 
+            return ouliersReturned;
         }
 
-        public Dictionary<string, string> highOutlierEachCriteria()
+        public Dictionary<string, string> highOutlierEachCriteria( Group AnalyzedGroup)
         {
-            throw new System.NotImplementedException();
+            Dictionary<string, string> ouliersReturned = new Dictionary<string, string>();
+            Dictionary<string, double> tempStudentAvg = new Dictionary<string, double>();
+            Dictionary<string, double> groupAvg = calcAvgOfAvgs(AnalyzedGroup);
+            foreach (var student in AnalyzedGroup.students)
+            {
+                
+                tempStudentAvg = student.calcAvg();
+                foreach (KeyValuePair<string, double> criteria in tempStudentAvg)
+                {
+                    if (groupAvg[criteria.Key] <= (criteria.Value - 2))
+                    {
+                        ouliersReturned.Add(criteria.Key, student.Name);
+                    }
+                    
+                }
+            }
+
+            return ouliersReturned;
         }
     }
 }
