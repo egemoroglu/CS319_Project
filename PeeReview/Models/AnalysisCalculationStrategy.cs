@@ -8,6 +8,7 @@ namespace PeeReview.Models
         Dictionary<string, double> calcAvgOfAvgs( Group AnalyzedGroup);
         Dictionary<string, string> lowOutlierEachCriteria( Group AnalyzedGroup);
         Dictionary<string, string> highOutlierEachCriteria( Group AnalyzedGroup);
+        double calcChemsitry(Group AnalyzedGroup);
     }
 
     public class GroupAnalysisCalculationStrategy: AnalysisCalculationStrategy
@@ -19,13 +20,26 @@ namespace PeeReview.Models
          * Afterwards, we call a method to get the average of the values in the dictionary and return a new dictionary 
          * with these values
          */
+        public double calcChemsitry(Group AnalyzedGroup)
+        {
+            Dictionary<string, double> groupAvg = calcAvgOfAvgs(AnalyzedGroup);
+            double returnedAvg = 0;
+            foreach (KeyValuePair<string, double> grade in groupAvg )
+            {
+                returnedAvg += grade.Value;
+            }
+
+            returnedAvg /= groupAvg.Count;
+            return returnedAvg;
+        }
+
         public Dictionary<string, double> calcAvgOfAvgs( Group AnalyzedGroup)
         {
             Dictionary<string, List<double>> tempAvgs = new Dictionary<string, List<double>>(); //We save the avgs for each criteria here
             Dictionary<string, double> studentsTemps = new Dictionary<string, double>(); // This one holds the average for each student
             foreach (var student in AnalyzedGroup.students) 
             {
-                studentsTemps = student.calcAvg();
+                studentsTemps = student.peersEvaluation.getAverage();
                 foreach (KeyValuePair<string, double> criteria in studentsTemps)
                 {
                     if (tempAvgs.ContainsKey(criteria.Key))
@@ -64,7 +78,7 @@ namespace PeeReview.Models
             foreach (var student in AnalyzedGroup.students)
             {
                 
-                tempStudentAvg = student.calcAvg();
+                tempStudentAvg =  student.peersEvaluation.getAverage();
                 foreach (KeyValuePair<string, double> criteria in tempStudentAvg)
                 {
                     if (groupAvg[criteria.Key] >= (criteria.Value + 2))
@@ -86,7 +100,7 @@ namespace PeeReview.Models
             foreach (var student in AnalyzedGroup.students)
             {
                 
-                tempStudentAvg = student.calcAvg();
+                tempStudentAvg =  student.peersEvaluation.getAverage();
                 foreach (KeyValuePair<string, double> criteria in tempStudentAvg)
                 {
                     if (groupAvg[criteria.Key] <= (criteria.Value - 2))

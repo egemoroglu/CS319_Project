@@ -18,8 +18,9 @@ namespace PeeReview.Models
 
         public DateTime deadlineDateTime;
         public string deadlineErrorMessage { get; private set; }
-        
-        //preview 
+        public Evaluation Evaluation { get; private set; }
+
+        public CalculateAverageEvaluationsStrategyDefault averageCalculator { get; set; }
         
         public Assignment(string title,string description, string stringDeadlineDateTime)
         {

@@ -17,14 +17,15 @@ namespace PeeReview.Models
         public List<Submission> SubmittedAssignments { get; }
         public AssignmentController Assignments { get; }
         public GroupController GroupController { get; }
-        public defaultSetUniqueID ID { get; private set; }
+        public defaultSetUniqueID IDSetter { get; private set; }
+        public string ID { get; private set; }
 
         public Course(string courseName, string courseCode, Instructor instructor)
         {
             CourseName = courseName;
             CourseCode = courseCode;
             Instructor = instructor;
-            ID.setUniqueID();
+            IDSetter.setUniqueID(ID);
         }
 
         // implementation later
@@ -33,22 +34,23 @@ namespace PeeReview.Models
             Projects.Add(project);    
         }
         
-        public void addGrader(string graderName)
+        public void addGrader(Grader grader)
         {
-            
+            Graders.Add(grader);
         }
 
-        public void removeGrader(string graderName)
+        public void removeGrader(Grader grader)
         {
-           
+            Graders.Remove(grader);
         }
-        public void addStudent(string studentName)
+        public void addStudent(Student student)
         {
+            Students.Add(student);
         }
 
-        public void removeStudent(string studentName)
+        public void removeStudent(Student student)
         {
-            
+            Students.Remove(student);
         }
     }
 }

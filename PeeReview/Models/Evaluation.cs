@@ -15,15 +15,14 @@ namespace PeeReview.Models
         }
 
         // We are gonna use a bunch of interfaces and base classes for this part 
-        
-        /*
-         * CriteriaAndGrade is a Dictionary with keys and values, each key takes one values only
-         * Outlier, avg,
-         * Create evaluation, with the creation of assignemnt, and add criteria
-         * 
-         * We add a default 0 to values intitially and then assign the real grade once evaluation is done
-         * adding the grade and changing it is all done in gradeCriteria method
-         */
+        public CalculateAverageEvaluationsStrategyDefault averageCalculator { get; set; }
+
+        public Dictionary<string, double> getAverage()
+        {
+            Dictionary<string, double> avgEvaluations = averageCalculator.getAverage(this);
+            return avgEvaluations;
+        }
+
         public Dictionary<string,List<int>> CriteriaAndGrade { get; } 
 
         

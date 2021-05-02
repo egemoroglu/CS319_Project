@@ -14,27 +14,28 @@ namespace PeeReview.Models
             SurName = surName;
             Email = email;
             Pic = pic;
-            ID.setUniqueID();
+            IDSetter.setUniqueID(ID);
         }
 
-        public defaultSetUniqueID ID { get;}
+        public defaultSetUniqueID IDSetter { get;}
 
         public string Name {get; private set; }
         public string SurName { get; private set; }
         public string Email { get; private set; }
+        public string ID { get; private set; }
         public Picture Pic { get; private set; }
         List<Course> courses { get;}
         List<Project> projects { get;}
         List<Notification> notifications { get;}
 
-        public bool joinCourse()
+        public void joinCourse()
         {
-            return false;
+           //access the courses from database and add student
         }
 
-        bool leaveCourse()
+        public void leaveCourse()
         {
-            return false;
+            //access the courses from database and remove student
         }
 
     

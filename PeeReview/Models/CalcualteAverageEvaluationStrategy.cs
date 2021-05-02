@@ -9,15 +9,15 @@ namespace PeeReview.Models
     }
     
     //-----------------------------------------------------------------------------------------
-    public class GroupCalculateAverageEvaluationsStrategy : CalcualteAverageEvaluationStrategy
+    public class CalculateAverageEvaluationsStrategyDefault : CalcualteAverageEvaluationStrategy
     {
-        public Group analyzedGroup { get; private set; }
+       
         Dictionary<string, double> avgForEachCriteria = new Dictionary<string, double>(); // here we save the average for each evaluation
         
-        GroupCalculateAverageEvaluationsStrategy( Group group)
+        CalculateAverageEvaluationsStrategyDefault(Evaluation eval )
         {
-            analyzedGroup = group;                  
-            avgForEachCriteria = getAverage(group.GroupEvaluation);
+                 
+            avgForEachCriteria = getAverage(eval);
         }
 
         public Dictionary<string, double> getAverage(Evaluation eval) //this function to be called 
@@ -43,36 +43,5 @@ namespace PeeReview.Models
     }
     //-------------------------------------------------------------------------------------
     
-    public class StudentCalculateAverageEvaluationsStrategy : CalcualteAverageEvaluationStrategy
-    {
-        public Student analyzedStudent { get; private set; }
-            Dictionary<string, double> avgForEachCriteria = new Dictionary<string, double>(); // here we save the average for each evaluation
-            
-            StudentCalculateAverageEvaluationsStrategy( Student student)
-            {
-                analyzedStudent = student;                  
-                avgForEachCriteria = getAverage(student.peersEvaluation);
-            }
     
-            public Dictionary<string, double> getAverage(Evaluation eval)
-            {
-                
-                Dictionary<string, double> avgForEachCriteriaReturned = new Dictionary<string, double>(); // here we pass an evaluation and it returns its average
-                double avg;
-                
-                foreach(KeyValuePair<string, List<int> > entry in eval.CriteriaAndGrade)
-                {
-                    avg = 0;
-                    foreach (var evalVal in entry.Value)
-                    {
-                        avg += evalVal;
-                    }
-    
-                    avg /=  entry.Value.Count;
-                    avgForEachCriteriaReturned.Add(entry.Key, avg);
-                }
-    
-                return avgForEachCriteriaReturned;
-            }
-    }
 }

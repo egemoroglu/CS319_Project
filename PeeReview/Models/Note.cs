@@ -4,18 +4,14 @@ namespace PeeReview.Models
     {
         public string Author { get; private set; }
         public string TextContent { get; private set; }
-        
-        public defaultSetUniqueID uniqueID { get;private set; }
+        public string ID { get; private set; }
+        public defaultSetUniqueID IDSetter { get;private set; }
 
         public Note(string author, string textContent) 
         {
             Author = author;
             TextContent = textContent;
-            uniqueID.setUniqueID();
-        }
-        public string getID()
-        {
-            return uniqueID.ID;
+            IDSetter.setUniqueID(ID);
         }
     }
 }

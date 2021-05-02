@@ -13,8 +13,10 @@ namespace PeeReview.Models
         public string SubmitterName { get; private set; }
         public DateTime SubmissionDateTime { get; private set; }
 
+        public string ID { get; private set; }
+
         //file 
-        public defaultSetUniqueID ID { get; } 
+        public defaultSetUniqueID IDSetter { get; } 
 
 
         protected Submission(string name, string overview, string submitterName)
@@ -22,7 +24,7 @@ namespace PeeReview.Models
             Name = name;
             SubmitterName = submitterName;
             Overview = new Note(SubmitterName, overview);
-            ID.setUniqueID();
+            IDSetter.setUniqueID(ID);
             SubmissionDateTime = DateTime.Now;
      
         }

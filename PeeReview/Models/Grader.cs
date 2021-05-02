@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 
@@ -9,23 +10,19 @@ namespace PeeReview.Models
             :base (name, surName, email, pic) {}
 
         private List<Instructor> relevantInstructors;
-        //courseToGrade is redundant since we have courses already
-        private List<Project> projects;
-
-
         protected void gradeAssignment(Assignment assignment, int grade)
         {
             assignment.setGrade(grade);
         }
-        protected void extendDeadlineProject (Project project, float hours){
-            //TODO
-            //In this method we should get the project's deadline and add hours parameter to the deadline.
-            //So, Date class should be added.
+        protected void extendDeadlineProject (Project project, string newDeadlineString){
+            
+            project.setDeadline(newDeadlineString);
+            //  return View(The view) TODO    
+                
+
         }
-        protected void extendDeadlineAssignment (Assignment assignment, float hours){
-            //TODO
-            //In this method we should get the assignment's deadline and add hours parameter to the deadline.
-            //So, Date class should be added.
+        protected void extendDeadlineAssignment (Assignment assignment, string newDeadlineString){
+            assignment.setDeadline(newDeadlineString);
         }
 
         public List<Group> getGroupsInCourse(Course course)
@@ -36,13 +33,9 @@ namespace PeeReview.Models
         public List<Student> getStudentsInGroup(Group group) //Is this really needed?
         {
             return group.students;
+            
         }
-
-        public List<Project> getProjects()
-        {
-            return projects;
-        }
-
+        
         public List<Instructor> getRelevantInstructors()
         {
             return relevantInstructors;

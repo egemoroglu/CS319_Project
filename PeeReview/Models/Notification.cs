@@ -12,7 +12,7 @@ namespace PeeReview.Models
 
         public User Sender { get; private set; }
 
-        Notification(string title, string text, string senderName)
+        public Notification(string title, string text, string senderName)
         {
             Title = title;
             Text = text;

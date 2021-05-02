@@ -7,7 +7,6 @@ namespace PeeReview.Models
     public class Instructor : User
     {
         public List<Grader> Graders { get; }
-        public List<Course> Courses { get; }
 
         public Instructor(string name, string surname, string email, Picture pic)
             : base(name, surname, email, pic) { }
@@ -28,20 +27,25 @@ namespace PeeReview.Models
 
         }
 
-        public void gradeAssignment(Assignment assignment, int grade)
+        protected void gradeAssignment(Assignment assignment, int grade)
         {
+            assignment.setGrade(grade);
+        }
 
+        protected void extendDeadlineProject (Project project, string newDeadlineString){
             
+            project.setDeadline(newDeadlineString);
+            //  return View(The view) TODO    
+                
+
+        }
+        protected void extendDeadlineAssignment (Assignment assignment, string newDeadlineString){
+            assignment.setDeadline(newDeadlineString);
         }
 
-        public void extendDeadlineProject(Project project, double hours)
+        public void removeStudentFromCourse(Student student, Course course)
         {
-
-        }
-
-        public void kickStudentFromCourse(Student student, Course course)
-        {
-
+            //reach DB and do 
         }
 
         public void addStudentToCourse(Student student, Course course)
@@ -56,12 +60,7 @@ namespace PeeReview.Models
           //  return course;
         }
 
-        public bool removeCourse(Course course)
-        {
-            Courses.Remove(course);
-
-            return true;
-        }
+  
 
         public bool assignStudentToGroup(Student student, Group group, Course courseName)
         {
@@ -77,13 +76,14 @@ namespace PeeReview.Models
 
         }
 
-        public List<Group> getGroupsOfCourse(Course course)
+        public List<Group> getGroupsInCourse(Course course)
         {
             return course.Groups;
         }
 
         public List<Student> getStudentsWithoutGroups(Course course)
         {
+            //reach from DB and add in course calss
             return course.Students;
         }
 
@@ -95,18 +95,23 @@ namespace PeeReview.Models
 
         public void createGroupFromOutsiders(Course course, int groupSize)
         {
-  
+        //later
         }
 
-
-
-        private void addCoursesGiven(Course courses)
+        public List<Student> getStudentsInGroup(Group group) //Is this really needed?
         {
-
+            return group.students;
+            
         }
 
-        private void removeCoursesGiven(Course courses)
+        private void createCourse(Course courses)
         {
+            //add to dateBase
+        }
+
+        private void removeCourse(Course courses)
+        {
+            //remove from dateBase
 
         }
 

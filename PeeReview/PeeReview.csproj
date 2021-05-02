@@ -131,13 +131,13 @@
         <Compile Include="Models\Assignment.cs" />
         <Compile Include="Models\Comment.cs" />
         <Compile Include="Models\Course.cs" />
-        <Compile Include="Models\defaultSetUniqueID.cs" />
         <Compile Include="Models\Evaluation.cs" />
         <Compile Include="Models\CompletedSubmission.cs" />
         <Compile Include="Models\Grader.cs" />
         <Compile Include="Models\Graph.cs" />
         <Compile Include="Models\Group.cs" />
         <Compile Include="Models\Instructor.cs" />
+        <Compile Include="Models\IOberver.cs" />
         <Compile Include="Models\Notification.cs" />
         <Compile Include="Models\Picture.cs" />
         <Compile Include="Models\Note.cs" />

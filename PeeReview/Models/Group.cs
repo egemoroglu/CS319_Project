@@ -4,16 +4,18 @@ namespace PeeReview.Models
 {
     public class Group
     {
+        public GroupAnalysisCalculationStrategy analysis { get; private set; }
         public string name { get; private set; }
         private int uniqueCode;
         private double chemstryPoint; //double was favoured for smoother usage 
-        private double averageEvaluation; // Will become multiple for each category
+
         public Evaluation GroupEvaluation { get; private set; }
 
         public List<Student> students { get; private set; }
         public List<Project> projects{ get; private set; }
         public List<Grader> graders{ get; private set; }
         public List<Assignment> assignments{ get; private set; }
+        public Dictionary<string, double> groupAverageEvals { get; private set; }
 
 
 
@@ -55,9 +57,28 @@ namespace PeeReview.Models
             graders.Remove(grader);
         }
 
-        public double calcChem()
+        public string calcChem()
         {
-            return chemstryPoint;//TODO
+             chemstryPoint = analysis.calcChemsitry(this);
+            switch (chemstryPoint)
+            {
+              case  var _ when (chemstryPoint == 10 && chemstryPoint >=9):
+                  return "PERFECT!!";
+              case var _ when (chemstryPoint < 9 && chemstryPoint >=8):
+                  return "NICE MATCH!!";
+              case  var _ when (chemstryPoint < 8 && chemstryPoint >=6):
+                  return "LOOKS LIKE IT WORKED";
+              case var _ when (chemstryPoint < 6 && chemstryPoint >= 4):
+                  return "SOMETHING WAS WRONG, NO?";
+              case  var _ when (chemstryPoint < 4 && chemstryPoint >0):
+                  return "IF DISASTER WAS A GROUP!!";
+              case  var _ when (chemstryPoint == 0):
+                  return "Looks like the chemistry is not calculated yet! HOW DID YOU GET HERE???";
+                  
+              
+            }
+
+            return "The calculated chemistry is off for some reason!! Time to dubug!!";
         }
 
         public double getChemistry()
@@ -65,14 +86,11 @@ namespace PeeReview.Models
             return chemstryPoint;
         }
 
-        public double getEval()
+        public Dictionary<string, double> calcEvalAvg()
         {
-            return averageEvaluation;
+            groupAverageEvals = GroupEvaluation.getAverage();
+            return groupAverageEvals;
         }
-
-        public void updateEval(int score, double chem)
-        {
-             //TODO
-        }
+        
     }
 }

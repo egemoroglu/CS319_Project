@@ -5,7 +5,8 @@ namespace PeeReview.Models
 {
     public class Assessment
     {
-        public defaultSetUniqueID UniqueId { get; set; }
+        public defaultSetUniqueID IDSetter { get; set; }
+        public string ID { get; private set; }
         private List<int> marks { get; }
         public Review Review; //Will be instantiated in the controller
 
@@ -16,11 +17,11 @@ namespace PeeReview.Models
                 this.marks.Add(mark);
             }
             Review = review;
-            UniqueId.setUniqueID();
+            IDSetter.setUniqueID(ID);
         }
         Assessment()
         {
-            UniqueId.setUniqueID();
+            IDSetter.setUniqueID(ID);
         }
 
         private void giveMark(int mark)
