@@ -1,7 +1,9 @@
+using System.Web.Mvc;
+
 namespace PeeReview.Controllers
 {
-    public class AssignmentController
+    public class AssignmentController : Controller
     {
-        
+  
     }
 }

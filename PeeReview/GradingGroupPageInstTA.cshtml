@@ -1,0 +1,384 @@
+@{
+    
+}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Grade Groups</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-secondary">
+        
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                
+            
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="pp" src="img/3lines.png" alt="resme alternatif yazı" width="20" height="20"></a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="Profile.html">My Profile</a>
+                        <a class="dropdown-item" href="CoursesStudent.html">My Courses</a>
+                        <a class="dropdown-item" href="#">My Assignments</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Sign Out</a>
+                        
+  
+                    </div>
+                </li>
+  
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+              </li>
+  
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Notifications<span class="sr-only">(current)</span></a>
+            </li>
+  
+            
+                
+  
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <a class="assignment-title"><b>Assignment1</b></a><br />
+    <hr class="line" width="1300" height="100"/>
+    <a href="#" class="grade-ind-btn" role="button"><Center>Grade as a Group</Center></a>
+    <form class="member1" name="form" action="index.asp" method="post">
+        <a class="member-title1"><b>Member1</b></a><br />
+        <a class="criteria-title11"><b>Criteria1</b></a>
+        <input class="grade11" type="text" placeholder="                  /10"><br />
+        <a class="criteria-title12"><b>Criteria2</b></a>
+        <input class="grade12" type="text" placeholder="                  /10"><br />
+        <a class="criteria-title13"><b>Criteria3</b></a>
+        <input class="grade13" type="text" placeholder="                  /10"><br />
+        <input class="note1" type="text" placeholder="notes">
+     </form>
+     <form class="member2" name="form" action="index.asp" method="post">
+        <a class="member-title2"><b>Member2</b></a><br />
+        <a class="criteria-title21"><b>Criteria1</b></a>
+        <input class="grade11" type="text" placeholder="                  /10"><br />
+        <a class="criteria-title22"><b>Criteria2</b></a>
+        <input class="grade12" type="text" placeholder="                  /10"><br />
+        <a class="criteria-title23"><b>Criteria3</b></a>
+        <input class="grade23" type="text" placeholder="                  /10"><br />
+        <input class="note2" type="text" placeholder="notes">
+     </form>
+     <form class="member3" name="form" action="index.asp" method="post">
+        <a class="member-title3"><b>Member3</b></a><br />
+        <a class="criteria-title31"><b>Criteria1</b></a>
+        <input class="grade11" type="text" placeholder="                  /10"><br />
+        <a class="criteria-title32"><b>Criteria2</b></a>
+        <input class="grade12" type="text" placeholder="                  /10"><br />
+        <a class="criteria-title33"><b>Criteria3</b></a>
+        <input class="grade33" type="text" placeholder="                  /10"><br />
+        <input class="note3" type="text" placeholder="notes">
+     </form>
+     <form class="member4" name="form" action="index.asp" method="post">
+        <a class="member-title4"><b>Member4</b></a><br />
+        <a class="criteria-title41"><b>Criteria1</b></a>
+        <input class="grade11" type="text" placeholder="                  /10"><br />
+        <a class="criteria-title42"><b>Criteria2</b></a>
+        <input class="grade12" type="text" placeholder="                  /10"><br />
+        <a class="criteria-title43"><b>Criteria3</b></a>
+        <input class="grade13" type="text" placeholder="                  /10"><br />
+        <input class="note4" type="text" placeholder="notes">
+     </form>
+     <form class="member5" name="form" action="index.asp" method="post">
+        <a class="member-title5"><b>Member5</b></a><br />
+        <a class="criteria-title11"><b>Criteria1</b></a>
+        <input class="grade11" type="text" placeholder="                  /10"><br />
+        <a class="criteria-title12"><b>Criteria2</b></a>
+        <input class="grade12" type="text" placeholder="                  /10"><br />
+        <a class="criteria-title13"><b>Criteria3</b></a>
+        <input class="grade13" type="text" placeholder="                  /10"><br />
+        <input class="note1" type="text" placeholder="notes">
+     </form>
+
+     <a href="#" class="submit-btn" role="button"><Center>Submit</Center></a>
+
+    <style>
+        .member1{
+            position:absolute;
+            top:4cm;
+            left:2cm;
+
+        }
+        .member-title1{
+            position:absolute;
+            font-size:25px;
+        }
+        .criteria-title11{
+            position:absolute;
+            top:1cm;
+        }
+        .criteria-title12{
+            position:absolute;
+            top:2cm;
+        }
+        .criteria-title13{
+            position:absolute;
+            top:3cm;
+        }
+        .grade11{
+            position:absolute;
+            top:1cm;
+            left:2cm;
+        }
+        .grade12{
+            position:absolute;
+            top:2cm;
+            left:2cm;
+        }
+        .grade13{
+            position:absolute;
+            top:3cm;
+            left:2cm;
+        }
+        .note1{
+          position:absolute;
+          top:4cm;
+          width:261px;
+          height:150px;
+      }
+      .member2{
+            position:absolute;
+            top:4cm;
+            left:10cm;
+
+        }
+        .member-title2{
+            position:absolute;
+            font-size:25px;
+        }
+        .criteria-title21{
+            position:absolute;
+            top:1cm;
+        }
+        .criteria-title22{
+            position:absolute;
+            top:2cm;
+        }
+        .criteria-title23{
+            position:absolute;
+            top:3cm;
+        }
+        .grade21{
+            position:absolute;
+            top:1cm;
+            left:2cm;
+        }
+        .grade22{
+            position:absolute;
+            top:2cm;
+            left:2cm;
+        }
+        .grade23{
+            position:absolute;
+            top:3cm;
+            left:2cm;
+        }
+        .note2{
+          position:absolute;
+          top:4cm;
+          width:261px;
+          height:150px;
+      }
+      .member3{
+            position:absolute;
+            top:4cm;
+            left:18cm;
+
+        }
+        .member-title3{
+            position:absolute;
+            font-size:25px;
+        }
+        .criteria-title31{
+            position:absolute;
+            top:1cm;
+        }
+        .criteria-title32{
+            position:absolute;
+            top:2cm;
+        }
+        .criteria-title33{
+            position:absolute;
+            top:3cm;
+        }
+        .grade31{
+            position:absolute;
+            top:1cm;
+            left:2cm;
+        }
+        .grade32{
+            position:absolute;
+            top:2cm;
+            left:2cm;
+        }
+        .grade33{
+            position:absolute;
+            top:3cm;
+            left:2cm;
+        }
+        .note3{
+          position:absolute;
+          top:4cm;
+          width:261px;
+          height:150px;
+      }
+      .member4{
+            position:absolute;
+            top:13cm;
+            left:2cm;
+
+        }
+        .member-title4{
+            position:absolute;
+            font-size:25px;
+        }
+        .criteria-title41{
+            position:absolute;
+            top:1cm;
+        }
+        .criteria-title42{
+            position:absolute;
+            top:2cm;
+        }
+        .criteria-title43{
+            position:absolute;
+            top:3cm;
+        }
+        .grade41{
+            position:absolute;
+            top:1cm;
+            left:2cm;
+        }
+        .grade42{
+            position:absolute;
+            top:2cm;
+            left:2cm;
+        }
+        .grade43{
+            position:absolute;
+            top:3cm;
+            left:2cm;
+        }
+        .note4{
+          position:absolute;
+          top:4cm;
+          width:261px;
+          height:150px;
+      }
+      .member5{
+            position:absolute;
+            top:13cm;
+            left:10cm;
+
+        }
+        .member-title5{
+            position:absolute;
+            font-size:25px;
+        }
+        .criteria-title51{
+            position:absolute;
+            top:1cm;
+        }
+        .criteria-title52{
+            position:absolute;
+            top:2cm;
+        }
+        .criteria-title53{
+            position:absolute;
+            top:3cm;
+        }
+        .grade51{
+            position:absolute;
+            top:1cm;
+            left:2cm;
+        }
+        .grade52{
+            position:absolute;
+            top:2cm;
+            left:2cm;
+        }
+        .grade53{
+            position:absolute;
+            top:3cm;
+            left:2cm;
+        }
+        .note5{
+          position:absolute;
+          top:4cm;
+          width:261px;
+          height:150px;
+      }
+        
+    
+            .assignment-title{
+            font-size: 30px;
+            position:absolute;
+            top:2cm;
+            left:2cm;
+        }
+        .line{
+        position:absolute;
+        top:3cm;
+        left:2cm;
+      }
+      .grade-ind-btn{
+          position:absolute;
+          top:2.5cm;
+          left:29cm;
+          background-color: lightseagreen;
+          color:white;
+          block-size: 30px; 
+          width: 200px;
+      }
+ 
+      .submit-btn{
+          position:absolute;
+          top:22cm;
+          left:2cm;
+          background-color: red;
+          color:white;
+          block-size: 30px; 
+          width: 860px;
+      }
+      .justify-content-center{
+        position: absolute;
+        top: 3cm;
+        left: 3cm;
+        width: 1100px;
+        height: 600px;
+      }
+
+      .form-inline{
+        position:absolute;
+        left:17cm;
+      }
+      .btn{
+      
+      background-color: red;
+      color: white;
+    }
+    </style>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
