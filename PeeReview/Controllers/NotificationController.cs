@@ -1,6 +1,8 @@
+using System.Web.Mvc;
+
 namespace PeeReview.Controllers
 {
-    public class NotificationController
+    public class NotificationController : Controller
     {
         
     }
