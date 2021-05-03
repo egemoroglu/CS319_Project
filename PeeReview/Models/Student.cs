@@ -11,11 +11,8 @@ namespace PeeReview.Models
         public List<Project> Projects { get; private set; }
         public Dictionary<string, double> currentAvg { get; private set; }
         
-        public Student(string name, string surname,string email, Picture pic )
-            : base( name,  surname, email,  pic ) { }
-
-
-
+        public Student(string name, string surname,string email, string password, Picture pic )
+            : base( name,  surname, email, password, pic ) { }
 
         public void addEvaluation(string criteria, int grade)
         {

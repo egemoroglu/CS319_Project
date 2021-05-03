@@ -6,8 +6,8 @@ namespace PeeReview.Models
 {
     public class Grader : User
     {
-        public Grader (string name, string surName, string email, Picture pic)
-            :base (name, surName, email, pic) {}
+        public Grader (string name, string surName, string email, string password, Picture pic)
+            :base (name, surName, email, password, pic) {}
 
         private List<Instructor> relevantInstructors;
         protected void gradeAssignment(Assignment assignment, int grade)

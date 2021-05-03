@@ -8,8 +8,8 @@ namespace PeeReview.Models
     {
         public List<Grader> Graders { get; }
 
-        public Instructor(string name, string surname, string email, Picture pic)
-            : base(name, surname, email, pic) { }
+        public Instructor(string name, string surname, string email, string password, Picture pic)
+            : base(name, surname, email, password, pic) { }
 
 
         public void addGrader(string graderName, string courseCode)
