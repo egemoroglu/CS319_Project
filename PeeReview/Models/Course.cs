@@ -15,7 +15,7 @@ namespace PeeReview.Models
         public Instructor Instructor { get; private set; }
         public List<Grader> Graders { get; }
         public List<Submission> SubmittedAssignments { get; }
-        public AssignmentController Assignments { get; }
+        public List<Assignment> Assignments { get; }
         public GroupController GroupController { get; }
         public defaultSetUniqueID IDSetter { get; private set; }
         public string ID { get; private set; }

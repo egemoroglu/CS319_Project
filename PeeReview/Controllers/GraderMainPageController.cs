@@ -2,9 +2,9 @@ using System.Web.Mvc;
 
 namespace PeeReview.Controllers
 {
-    public class GroupController : Controller
+    public class GraderMainPageController : Controller
     {
-        public ActionResult DetailedOtherGroupStudents()
+        public ActionResult CoursesGrader()
         {
             return View();
         }

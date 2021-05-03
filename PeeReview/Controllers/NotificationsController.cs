@@ -2,12 +2,13 @@ using System.Web.Mvc;
 
 namespace PeeReview.Controllers
 {
-    public class GroupController : Controller
+    public class NotificationsController : Controller
     {
-        public ActionResult DetailedOtherGroupStudents()
+        public ActionResult NotificationsStudent() //merge
         {
             return View();
         }
+   
 
     }
 }
