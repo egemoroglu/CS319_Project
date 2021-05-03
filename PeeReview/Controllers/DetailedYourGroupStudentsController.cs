@@ -2,7 +2,7 @@ using System.Web.Mvc;
 
 namespace PeeReview.Controllers
 {
-    public class DetailedYourGroupStudentsCotntroller : Controller
+    public class DetailedYourGroupStudentsController : Controller
     {
   
     }

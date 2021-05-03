@@ -2,7 +2,7 @@ using System.Web.Mvc;
 
 namespace PeeReview.Controllers
 {
-    public class GroupAssginementInsTAController : Controller
+    public class NotificationsInstTaController : Controller
     {
   
     }

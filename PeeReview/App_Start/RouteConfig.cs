@@ -16,7 +16,7 @@ namespace PeeReview
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new {controller = "CoursesGrader", action = "EvaluateTeamMembers", id = UrlParameter.Optional}
+                defaults: new {controller = "MainPageStudents", action = "CoursesGrader", id = UrlParameter.Optional}
             );
         }
     }

@@ -2,7 +2,7 @@ using System.Web.Mvc;
 
 namespace PeeReview.Controllers
 {
-    public class GradingIndividuallyPageInstTAController : Controller
+    public class AssignmentsInsTaController : Controller
     {
   
     }
