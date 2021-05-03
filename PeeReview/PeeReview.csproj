@@ -163,6 +163,7 @@
         <Content Include="Content\bootstrap-theme.min.css" />
         <Content Include="Content\bootstrap.css" />
         <Content Include="Content\bootstrap.min.css" />
+        <Content Include="Content\MainMenu.css" />
         <Content Include="CoursesInstructor.cshtml" />
         <Content Include="CoursesStudent.cshtml" />
         <Content Include="CreateAssignment.cshtml" />
