@@ -8,9 +8,10 @@ namespace PeeReview.Models
     public class Assignment
     {
                
-        public double grade;
-        public string title;
-        public string description;
+        public double grade { get; private set; }
+        public string title { get; private set; }
+        public string description { get; private set; }
+
         public List<Submission> Submissions;
         public List<CompletedSubmission> CompletedSubmissions;
         public Assignment nextIteration { get; private set; }
