@@ -12,10 +12,10 @@ namespace PeeReview.Controllers
         {
             return View();
         }
-  
+
         /**
          * Assuming data given by user is string form
-         */ 
+         */
         public bool SignUp(string name, string surname, string studentId, string email, string password)
         {
             Connector conn = new Connector("StudentTable");
