@@ -6,6 +6,23 @@ namespace PeeReview.Controllers
 {
     public class ProjectController : Controller
     {
+        List<Group> groups = new List<Group>();
+
+        public void AddProjectGroup(Project project, Group group)
+        {
+            groups.Insert(groups.Count, group);
+            //Add to db
+            Connector conn = new Connector("ProjectsTable");
+            conn.addProjectGroup(project, group);
+        }
+
+        public void AddStudentGroup(Student student, Group group)
+        {
+            group.addStudent(student);
+            Connector conn = new Connector("GroupTable");
+            conn.addStudentGroup(student, group);
+        }
+
         public ActionResult AssignStudentsToGroups()
         {
             Course course = new Course("OOOOPP", "CS319",new Instructor("fiIs","fiSu","qw@", "123"));
