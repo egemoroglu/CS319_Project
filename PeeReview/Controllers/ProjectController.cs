@@ -16,6 +16,13 @@ namespace PeeReview.Controllers
             conn.addProjectGroup(project, group);
         }
 
+        public void AddStudentGroup(Student student, Group group)
+        {
+            group.addStudent(student);
+            Connector conn = new Connector("GroupTable");
+            conn.addStudentGroup(student, group);
+        }
+
         public ActionResult AssignStudentsToGroups()
         {
             return View();

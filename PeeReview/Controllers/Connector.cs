@@ -29,7 +29,38 @@ namespace PeeReview.Controllers
                 { "Email", email },
             };
         }
+        public void addStudentGroup(Student student, Group group)
+        {
+            //This document should retrieve info from User
+            var document = new BsonDocument
+            {
+                //public string Name { get; private set; }
+                //public string ID { get; private set; }
+                //public Note Description { get; private set; }
+                //public int GroupSize { get; private set; }
+                //public defaultSetUniqueID IDSetter { get; private set; }
+                //public List<Group> Groups { get; }
+                //public DateTime DeadlineDateTime;
+                //public Course Course { get; private set; }
+                //public List<Assignment> Assignments { get; private set; }
+                //public DateTime ProjectDateTime { get; private set; }
+                //public string deadlineErrorMessage { get; private set; }
+                                              
+                //
+                { "GroupName", group.name },
+                { student.Name, group.students.Count  },
 
+                //PASSING ARRAY
+                { "StudentList", new BsonArray { "Student name", student.Name } },
+               
+                //PASSING OBJ
+                //{ "size", new BsonDocument { { "attribute_0", 28 }, { "attribute_1", 35.5 }, { "attribute_2", "cm" } } }
+            };
+
+            var database = client.GetDatabase(dbname);
+            var collection = database.GetCollection<BsonDocument>(databaseName);
+            collection.InsertOne(document);
+        }
         public void addProjectGroup(Project project, Group group)
         {
             //This document should retrieve info from User
