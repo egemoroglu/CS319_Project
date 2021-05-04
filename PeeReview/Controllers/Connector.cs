@@ -270,6 +270,88 @@ namespace PeeReview.Controllers
              collection.DeleteOne(deleteFilter);
              //remove course from database
         }
+        public void addGrader(Grader grader)
+        {
+            //This document should retrieve info from User
+            var document = new BsonDocument
+                {
+                //
+                { "userType", "Grader" },
+
+                //it is possible to assign attributes like following
+                //user name
+                { "userName", grader.Name },
+                { "surName", grader.SurName },
+                { "email", grader.Email },
+                { "psswd", grader.Password },
+
+                //PASSING ARRAY
+                { "CourseList", new BsonArray { "", "" } },
+                { "AssignmentList", new BsonArray { "", "" } },
+                { "ProjectList", new BsonArray { "", "" } },
+                { "GroupList", new BsonArray { "", "" } },
+
+                //PASSING OBJ
+                //{ "size", new BsonDocument { { "attribute_0", 28 }, { "attribute_1", 35.5 }, { "attribute_2", "cm" } } }
+                };
+
+            var database = client.GetDatabase(dbname);
+            var collection = database.GetCollection<BsonDocument>(databaseName);
+            collection.InsertOne(document);
+        }
+        
+        public void removeGrader(Grader grader)
+        {
+            //find course
+            var database = client.GetDatabase(dbname);
+            var collection = database.GetCollection<BsonDocument>(databaseName);
+
+            var deleteFilter = Builders<BsonDocument>.Filter.Eq("email", grader.Email);
+            collection.DeleteOne(deleteFilter);
+            //remove course from database
+        }
+
+        public void addInstructor(Instructor instructor)
+        {
+            //This document should retrieve info from User
+            var document = new BsonDocument
+                {
+                //
+                { "userType", "Grader" },
+
+                //it is possible to assign attributes like following
+                //user name
+                { "userName", instructor.Name },
+                { "surName", instructor.SurName },
+                { "email", instructor.Email },
+                { "psswd", instructor.Password },
+
+                //PASSING ARRAY
+                { "CourseList", new BsonArray { "", "" } },
+                { "AssignmentList", new BsonArray { "", "" } },
+                { "ProjectList", new BsonArray { "", "" } },
+                { "GroupList", new BsonArray { "", "" } },
+
+                //PASSING OBJ
+                //{ "size", new BsonDocument { { "attribute_0", 28 }, { "attribute_1", 35.5 }, { "attribute_2", "cm" } } }
+                };
+
+            var database = client.GetDatabase(dbname);
+            var collection = database.GetCollection<BsonDocument>(databaseName);
+            collection.InsertOne(document);
+        }
+
+        public void removeInstructor(Instructor instructor)
+        {
+            //find course
+            var database = client.GetDatabase(dbname);
+            var collection = database.GetCollection<BsonDocument>(databaseName);
+
+            var deleteFilter = Builders<BsonDocument>.Filter.Eq("email", instructor.Email);
+            collection.DeleteOne(deleteFilter);
+            //remove course from database
+        }
+
         public bool userExist(string email)
         {
             var database = client.GetDatabase(dbname);
