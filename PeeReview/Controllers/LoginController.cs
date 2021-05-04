@@ -1,6 +1,7 @@
 using PeeReview.Models;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace PeeReview.Controllers
 {
@@ -13,7 +14,25 @@ namespace PeeReview.Controllers
 
         public ActionResult Login()
         {
-            //retreival of users here
+            string email = "";
+            string pw = "";
+            User user;
+            user = LogInDal(email, pw);
+            if (user is Student)
+            {
+                
+            }
+
+            if (user is Instructor)
+            {
+                
+            }
+
+            if (user is Grader)
+            {
+                
+            }
+
             return View();
         }
 

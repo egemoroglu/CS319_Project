@@ -8,7 +8,8 @@ namespace PeeReview.Models
         {
             this.name = name;
             this.parentCourse = parentCourse;
-            
+            students = new List<Student>();
+
         }
 
         public GroupAnalysisCalculationStrategy analysis { get; private set; }
