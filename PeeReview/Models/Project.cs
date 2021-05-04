@@ -17,7 +17,7 @@ namespace PeeReview.Models
         public DateTime ProjectDateTime { get; private set; }
         public string deadlineErrorMessage { get; private set; }
 
-        Project(string name, string descrpition, Course course, string stringDeadlineDateTime  )
+        public Project(string name, string descrpition, Course course, string stringDeadlineDateTime  )
         {
             Name = name;
             Course = course;

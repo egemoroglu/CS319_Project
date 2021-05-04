@@ -13,6 +13,8 @@ namespace PeeReview.Controllers
         }
         public ActionResult CoursesInstructor() //merge all detailed
         {
+            Instructor instructor = new Instructor("instrName", "instrSur", "fe", "fers");
+            ViewBag.Message = instructor;
             return View();
         }
         public ActionResult CreateAssignment()//merge all assignment

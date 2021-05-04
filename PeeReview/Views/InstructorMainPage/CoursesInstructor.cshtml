@@ -1,5 +1,7 @@
+@using PeeReview.Models
 @{
-    
+  var instructor = ViewBag.Message;
+
 }
 <!doctype html>
 <html lang="en">
@@ -53,9 +55,22 @@
   <a class="courses"><b>Courses</b></a><br />
   <hr class="line" width="1300" height="100"/>
   <a href="#" class="enroll-btn" role="button"><Center>Create a new course</Center></a>
-  <form class="courses_labels" name="form">
-    <label class="duz-cerceve"><a href="#" class="course_label1" role="button">Course1</a></label><br /><br />
- </form>
+  
+  @if (instructor.courses.Count > 0)
+    {
+      foreach (var course in instructor.courses)
+      {
+          <form class="courses_labels" name="form">
+            <label class="duz-cerceve"><a href="#" class="course_label1" role="button">@course.CourseName</a>
+              <a class="course-Name" href="#">@course.CourseCode</a><br /></label>
+          </form>
+        <br>
+      }
+    }
+    else {
+      <a class="message" href="#">No courses yet </a><br>
+    }
+
   
 
   <style>

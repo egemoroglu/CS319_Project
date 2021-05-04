@@ -4,10 +4,18 @@ namespace PeeReview.Models
 {
     public class Group
     {
+        public Group(string name, Course parentCourse)
+        {
+            this.name = name;
+            this.parentCourse = parentCourse;
+            
+        }
+
         public GroupAnalysisCalculationStrategy analysis { get; private set; }
         public string name { get; private set; }
         private int uniqueCode;
         private double chemstryPoint; //double was favoured for smoother usage 
+        public Course parentCourse { get; set; }
 
         public Evaluation GroupEvaluation { get; private set; }
 

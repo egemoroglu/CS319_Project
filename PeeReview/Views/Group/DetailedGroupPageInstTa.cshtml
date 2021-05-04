@@ -1,5 +1,7 @@
+@using PeeReview.Models
+
 @{
-    
+    Group group = ViewBag.Message;
 }
 <!doctype html>
 <html lang="en">
@@ -81,16 +83,24 @@
                 <a class="dropdown-item" href="#">Member5</a>
             </div>
         </div>
-        <div class="past-assignments">
+        <div class="assignments">
             <button class="btn3 btn-secondary dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                        Past Assignments
-                    </button>
-            <div class="dropdown-menu" aria-labelledby="triggerId">
-                <a class="dropdown-item" href="#">Assignment1</a>
-                <a class="dropdown-item" href="#">Assignment2</a>
-                <a class="dropdown-item" href="#">Assignment3</a>
-            </div>
+                                aria-expanded="false">
+                             Assignments
+                        </button>
+            @if (group.assignments.Count > 0)
+            {
+                foreach (Assignment assignment in group.assignments)
+                {
+                    <div class="dropdown-menu" aria-labelledby="triggerId">
+                        <a class="dropdown-item" href="#">@assignment.title</a>
+                
+                    </div>
+                }
+
+            }
+
+            
         </div>
         <div class="grades">
             <button class="btn4 btn-secondary dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"

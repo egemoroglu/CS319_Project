@@ -1,5 +1,6 @@
+@using PeeReview.Models
 @{
-  var grader = ViewBag.Message;
+  var instructor = ViewBag.Message;
 }
 <!doctype html>
 <html lang="en">
@@ -65,18 +66,37 @@
     </div>
 
     <label class="duz-cerceve"></label>
-    <label class="duz-cerceve1"></label>
-    <a class="my-assignments"><b>My Assignments</b></a>
-
-    <a class="assignment1" href="#">Assignment 1</a><br>
-    <a class="assignment2" href="#">Assignment 2</a><br>
-    <a class="assignment3" href="#">Assignment 3</a>
+  <label class="duz-cerceve1"></label>
+       <a class="my-assignments"><b>My Assignments</b></a>
+  @if (instructor.assignments.Count > 0)
+  {
+    foreach (var assignment in instructor.assignments)
+    {
+      <a class="assignment-title" href="#">@assignment.title</a><br>
+      <a class="assignment-description" href="#">@assignment.description</a><br> 
+      <a class="assignment-deadline" href="#">@assignment.deadlineDateTime.ToString("yyyy MMMM dd")</a><br>
+    }
+  }
+  else
+  {
+    <a class="None found" href="#">No Assignments found </a><br>
+  }
 
     <a class="my-courses"><b>My Courses</b></a>
 
-    <a class="course1" href="#">Course 1</a><br>
-    <a class="course2" href="#">Course 2</a><br>
-    <a class="course3" href="#">Course 3</a>
+  @if (instructor.courses.Count > 0)
+  {
+    foreach (var course in instructor.courses)
+    {
+      <a class="course-Name" href="#">@course.CourseName</a>
+      <a class="course-Name" href="#">@course.CourseCode</a>
+      <br>
+    }
+  }
+  else {
+    <a class="message" href="#">No courses yet </a><br>
+  }
+
 
     <input class="checkbox1" type="checkbox" name="secim2">
     <a class="completed"><b>Completed </b></a> 

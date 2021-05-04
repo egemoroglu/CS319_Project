@@ -18,26 +18,46 @@ namespace PeeReview.Models
             IDSetter.setUniqueID(ID);
         }
 
-        public defaultSetUniqueID IDSetter { get;}
+        public defaultSetUniqueID IDSetter { get; }
 
         public string Password { get; private set; }
-        public string Name {get; private set; }
+        public string Name { get; private set; }
         public string SurName { get; private set; }
         public string Email { get; private set; }
         public string ID { get; private set; }
         public Picture Pic { get; private set; }
-        List<Course> courses { get;}
-        List<Project> projects { get;}
-        List<Notification> notifications { get;}
-
-        public void joinCourse()
+        public List<Course> courses { get; }
+        public List<Project> projects { get; }
+        public List<Assignment> assignments { get; }
+        public List<Notification> notifications { get;}
+        
+        public void addAssignment(Assignment assignment)
         {
-           //access the courses from database and add student
+            assignments.Add(assignment);
         }
 
-        public void leaveCourse()
+        public void removeAssignment(Assignment assignment)
         {
-            //access the courses from database and remove student
+            assignments.Remove(assignment);
+        }
+        public void joinProjetc(Project project)
+        {
+            projects.Add(project);
+        }
+
+        public void leaveProject(Project project)
+        {
+            projects.Remove(project);
+        }
+        
+        public void joinCourse(Course course)
+        {
+            courses.Add(course);
+        }
+
+        public void leaveCourse(Course course)
+        {
+            courses.Remove(course);
         }
 
     
