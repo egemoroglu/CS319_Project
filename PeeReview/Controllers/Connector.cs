@@ -19,6 +19,17 @@ namespace PeeReview.Controllers
              databaseName = tableName;
         }
 
+        public void createSeesion(string email)
+        {
+            var document = new BsonDocument
+            {
+                { "Email", email },
+                { "Email", email },
+                { "Email", email },
+                { "Email", email },
+            };
+        }
+
         void addUser(Models.User user)
         {
             //This document should retrieve info from User
@@ -48,8 +59,7 @@ namespace PeeReview.Controllers
                 var collection = database.GetCollection<BsonDocument>(databaseName);
                 collection.InsertOne(document);
            }
-
-           public void addProject(Project project)
+        public void addProject(Project project)
            {
                 //This document should retrieve info from User
                 var document = new BsonDocument
@@ -85,8 +95,7 @@ namespace PeeReview.Controllers
            var collection = database.GetCollection<BsonDocument>(databaseName);
            collection.InsertOne(document);
            }
-
-           void removeProject(Project project)
+        public void removeProject(Project project)
            {
                 //find project
                 var database = client.GetDatabase(dbname);
@@ -96,8 +105,7 @@ namespace PeeReview.Controllers
                 collection.DeleteOne(deleteFilter);
                 //remove course from database
            }
-
-           void addAssignment(Assignment assignment)
+        public void AddAssignment(Assignment assignment)
            {
                 var document = new BsonDocument
                 {
@@ -133,8 +141,7 @@ namespace PeeReview.Controllers
            var collection = database.GetCollection<BsonDocument>(databaseName);
            collection.InsertOne(document);
            }
-
-           void removeAssignment(Assignment assignment)
+        public void RemoveAssignment(Assignment assignment)
            {
                 //find course
                 var database = client.GetDatabase(dbname);
@@ -144,8 +151,31 @@ namespace PeeReview.Controllers
                 collection.DeleteOne(deleteFilter);
                 //remove course from database
            }
+        public List<String> GetAssignmentsOfCourse(Course course)
+        {
+            //No pre-course-check
+            //Get "AssignmentsTable" through connector in call
+            var database = client.GetDatabase(dbname);
+            var collection = database.GetCollection<BsonDocument>(databaseName);
+            //filter for given course's code
+            //put them into string
+            //return
 
-           public void addCourse(Course course)
+            //Retrive according to filter
+            var filter = Builders<BsonDocument>.Filter.Eq("CourseCode",course.CourseCode);
+            var result = collection.Find(filter).ToList();
+            List<string> ret = new List<string>();
+            int i = 0;
+            //step
+            foreach (var doc in result)
+            {
+                ret.Insert(i, (string)doc);
+            }
+            return ret;
+            //Console.WriteLine("Connection Open!");
+            //}
+        }
+        public void addCourse(Course course)
            {
                 var document = new BsonDocument
                 {
@@ -182,8 +212,7 @@ namespace PeeReview.Controllers
            var collection = database.GetCollection<BsonDocument>(databaseName);
            collection.InsertOne(document);
            }
-
-           public void removeCourse(Course course)
+        public void removeCourse(Course course)
            {                //find course
                 var database = client.GetDatabase(dbname);
                 var collection = database.GetCollection<BsonDocument>(databaseName);
@@ -192,18 +221,17 @@ namespace PeeReview.Controllers
                 collection.DeleteOne(deleteFilter);
                 //remove course from database
            }
-
-           /**
-            * example call
-            * in userController/studentController addUser/addStudent function creates a Connector obj with ("UserTable/StudentTable") //Check Constructor
-            * Connector conn("UserTable");
-            * conn.addStudent(Student student) //this line keeps the student's info in db
-            *
-            *addStudent adds the information to db
-            * 
-            * 
-           */
-           public void addStudent(Student student)
+        /**
+        * example call
+        * in userController/studentController addUser/addStudent function creates a Connector obj with ("UserTable/StudentTable") //Check Constructor
+        * Connector conn("UserTable");
+        * conn.addStudent(Student student) //this line keeps the student's info in db
+        *
+        *addStudent adds the information to db
+        * 
+        * 
+        */
+        public void addStudent(Student student)
            {
                 //This document should retrieve info from User
                 var document = new BsonDocument
@@ -232,7 +260,6 @@ namespace PeeReview.Controllers
                  var collection = database.GetCollection<BsonDocument>(databaseName);
                  collection.InsertOne(document);
            }
-
         public void removeStudent(Student student)
         {
              //find course
@@ -243,7 +270,6 @@ namespace PeeReview.Controllers
              collection.DeleteOne(deleteFilter);
              //remove course from database
         }
-
         public bool userExist(string email)
         {
             var database = client.GetDatabase(dbname);

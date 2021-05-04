@@ -23,6 +23,17 @@ namespace PeeReview.Controllers
         {
             return View();
         }
-        
+
+        public bool AddAssignment(Assignment assignment)
+        {
+            //Add to db
+            Connector conn = new Connector("AssignmentsTable");
+            conn.AddAssignment(assignment);
+            return true;
+        }
+    
+
+
+
     }
 }
