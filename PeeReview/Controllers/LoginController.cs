@@ -27,11 +27,13 @@ namespace PeeReview.Controllers
         * Assuming data is taken from the ui
         * 
         */
-        public bool LogInDal(string email, string pw)//What is this?
+        public bool LogInDal(string email, string pw)
         {
             //check email in system
             //check if it is the correct pw
             Connector conn = new Connector("UserTable");
+            Connector sess = new Connector("Session");
+            sess.
             return conn.emailPassword(email,pw);
         }
     }
