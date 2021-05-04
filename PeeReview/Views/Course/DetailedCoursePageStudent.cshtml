@@ -1,5 +1,6 @@
+@using PeeReview.Models
 @{
-    
+    Course course = ViewBag.Message;
 }
 <!doctype html>
 <html lang="en">
@@ -62,12 +63,51 @@
     <a href="#" class="find-group-btn" role="button"><Center>Find Group</Center></a>
     <label class="duz-cerceve"><a class="course-description">Course Description</a></label>
     <form class="assignments" name="form" >
-        <a class="assignments-title"><b>Assignments</b></a>
-        <label class="duz-cerceve1"><a href="#" class="assignments">• Assignment1</a></label>
+        
+      @if (course.Assignments.Count > 0)
+      {
+          foreach (Assignment assignment in course.Assignments)
+          {
+              <label class="duz-cerceve1"><a href="#" class="assignments">@assignment.title</a></label>
+          }
+            
+      }
+      else
+      {
+          <label class="duz-cerceve1"><a href="#" class="assignments">No assignments</a></label>
+
+      }
      </form>
      <form class="groups" name="form" >
-        <a class="groups-title"><b>Groups</b></a>
-        <label class="duz-cerceve2"><a href="#" class="groups">• Group1</a></label>
+    @if (course.Groups.Count > 0){
+                                 foreach (Group group in course.Groups)
+                                 {
+                                     <a href="#" class="group-label3" role="button">@group.name</a><br />
+                                   
+                                     if (group.students.Count > 0)
+                                     {
+                                         
+                                         foreach (Student student in group.students)
+                                         {
+                                             <label class="duz-cerceve1"><a href="#" class="groups">@student.Name</a></label>
+                                         }
+                                       
+                                         <a href="#" class="grade-btn3" role="button"><Center>Grade</Center></a>
+                                     }
+                                     else
+                                     {
+                                     }
+                                     
+                                     
+                                         
+                                     }
+                                 }
+                             }
+                             else
+                             {
+                                 <label class="duz-cerceve1"><a href="#" class="groups">No groups</a></label>
+                       
+                             }
      </form>
      <form class="graders" name="form" >
         <a class="graders-title"><b>Graders</b></a>

@@ -96,8 +96,19 @@
                }
 </form>
      <form class="graders" name="form" >
-        <a class="graders-title"><b>Graders</b></a>
-        <label class="duz-cerceve3"><a href="#" class="graders">• Grader1</a></label>
+        @if (course.Graders.Count > 0)
+                       {
+                           foreach (Grader grader in course.Graders)
+                           {
+                               <label class="duz-cerceve1"><a href="#" class="graders">@grader.Name</a></label>
+                           }
+                             
+                       }
+                       else
+                       {
+                           <label class="duz-cerceve1"><a href="#" class="graders">No Graders</a></label>
+                 
+                       }
      </form>
     
 

@@ -1,6 +1,9 @@
-@{
-    
-}
+
+    @using PeeReview.Models
+    @{
+        Course course = ViewBag.Message;
+    }
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -53,32 +56,41 @@
     </nav>
 
     <form class="group1" name="form" action="index.asp" method="post">
-        <a href="#" class="group-label1" role="button">Group1</a><br />
-        <label class="duz-cerceve"><Center><a href="#" class="course_label1" role="button">Member1</a><br />
-            <a href="#" class="course_label1" role="button">Member2</a><br />
-            <a href="#" class="course_label1" role="button">Member3</a><br />
-            <a href="#" class="course_label1" role="button">Member4</a><br />
-            <a href="#" class="course_label1" role="button">Member5</a></Center></label><br /><br />
-            <a href="#" class="grade-btn1" role="button"><Center>Grade</Center></a>
-     </form>
-     
-     <form class="group2" name="form" action="index.asp" method="post">
-        <a href="#" class="group-label2" role="button">Group2</a><br />
-        <label class="duz-cerceve1"><Center><a href="#" class="course_label1" role="button">Member1</a><br />
-            <a href="#" class="course_label1" role="button">Member2</a><br />
-            <a href="#" class="course_label1" role="button">Member3</a><br />
-            <a href="#" class="course_label1" role="button">Member4</a><br />
-            <a href="#" class="course_label1" role="button">Member5</a></Center></label><br /><br />
-            <a href="#" class="grade-btn2" role="button"><Center>Grade</Center></a>
-     </form>
+        
+     </form><a href="#" class="group-label3" role="button">Groups</a><br />
+                                    
      <form class="group3" name="form" action="index.asp" method="post">
-        <a href="#" class="group-label3" role="button">Group3</a><br />
-        <label class="duz-cerceve2"><Center><a href="#" class="course_label1" role="button">Member1</a><br />
-            <a href="#" class="course_label1" role="button">Member2</a><br />
-            <a href="#" class="course_label1" role="button">Member3</a><br />
-            <a href="#" class="course_label1" role="button">Member4</a><br />
-            <a href="#" class="course_label1" role="button">Member5</a></Center></label><br /><br />
-            <a href="#" class="grade-btn3" role="button"><Center>Grade</Center></a>
+       
+          @if (course.Groups.Count > 0){
+                             foreach (Group group in course.Groups)
+                             {
+                                 <a href="#" class="group-label3" role="button">@group.name</a><br />
+                               
+                                 if (group.students.Count > 0)
+                                 {
+                                     
+                                     foreach (Student student in group.students)
+                                     {
+                                         <label class="duz-cerceve1"><a href="#" class="groups">@student.Name</a></label>
+                                     }
+                                   
+                                     <a href="#" class="grade-btn3" role="button"><Center>Grade</Center></a>
+                                 }
+                                 else
+                                 {
+                                 }
+                                 
+                                 
+                                     
+                                 }
+                             }
+                         }
+                         else
+                         {
+                             <label class="duz-cerceve1"><a href="#" class="groups">No groups</a></label>
+                   
+                         }
+         
      </form>
      <form class="group4" name="form" action="index.asp" method="post">
         <a href="#" class="group-label4" role="button">Group4</a><br />
