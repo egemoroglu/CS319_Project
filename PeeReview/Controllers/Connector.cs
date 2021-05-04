@@ -7,23 +7,21 @@ using MongoDB.Driver;
 using PeeReview.Models;
 
 namespace PeeReview.Controllers
-{   
-           public class Connector
-           {
-            static string connectionLink = "mongodb+srv://yigit:0Bijmmtw7s8XtX9x@cluster0.zosoz.mongodb.net/peereview?retryWrites=true&w=majority";
-            static string dbname = "peereview";
-            static MongoDB.Driver.MongoClient client = new MongoDB.Driver.MongoClient(connectionLink);
-            string databaseName;
+{       public class Connector
+    {
+        static string connectionLink = "mongodb+srv://yigit:0Bijmmtw7s8XtX9x@cluster0.zosoz.mongodb.net/peereview?retryWrites=true&w=majority";
+        static string dbname = "peereview";
+        static MongoDB.Driver.MongoClient client = new MongoDB.Driver.MongoClient(connectionLink);
+        string databaseName;
+        public Connector(string tableName)
+        {
+             //var client = new MongoDB.Driver.MongoClient(connectionLink);
+             databaseName = tableName;
+        }
 
-           public Connector(string tableName)
-           {
-                //var client = new MongoDB.Driver.MongoClient(connectionLink);
-                databaseName = tableName;
-           }
-
-           void addUser(Models.User user)
-           {
-                //This document should retrieve info from User
+        void addUser(Models.User user)
+        {
+            //This document should retrieve info from User
                 var document = new BsonDocument
                 {
                 //
@@ -209,7 +207,7 @@ namespace PeeReview.Controllers
            {
                 //This document should retrieve info from User
                 var document = new BsonDocument
-           {
+                {
                 //
                 { "userType", "Student" },
 
@@ -228,70 +226,99 @@ namespace PeeReview.Controllers
 
                 //PASSING OBJ
                 //{ "size", new BsonDocument { { "attribute_0", 28 }, { "attribute_1", 35.5 }, { "attribute_2", "cm" } } }
-           };
+                };
 
-           var database = client.GetDatabase(dbname);
-           var collection = database.GetCollection<BsonDocument>(databaseName);
-           collection.InsertOne(document);
+                 var database = client.GetDatabase(dbname);
+                 var collection = database.GetCollection<BsonDocument>(databaseName);
+                 collection.InsertOne(document);
            }
 
-           public void removeStudent(Student student)
-           {
-                //find course
-                var database = client.GetDatabase(dbname);
-                var collection = database.GetCollection<BsonDocument>(databaseName);
+        public void removeStudent(Student student)
+        {
+             //find course
+             var database = client.GetDatabase(dbname);
+             var collection = database.GetCollection<BsonDocument>(databaseName);
+            
+             var deleteFilter = Builders<BsonDocument>.Filter.Eq("email", student.Email);
+             collection.DeleteOne(deleteFilter);
+             //remove course from database
+        }
 
-                var deleteFilter = Builders<BsonDocument>.Filter.Eq("email", student.Email);
-                collection.DeleteOne(deleteFilter);
-                //remove course from database
-           }
+        public bool userExist(string email)
+        {
+            var database = client.GetDatabase(dbname);
+            var collection = database.GetCollection<BsonDocument>(databaseName);
 
-           //    static void Connect()
-           //    {
-           //var client = new MongoDB.Driver.MongoClient("mongodb+srv://yigit:0Bijmmtw7s8XtX9x@cluster0.zosoz.mongodb.net/peereview?retryWrites=true&w=majority");
-           //Db name 
-           //var database = client.GetDatabase("peereview");
-           //To reach Collection
-           //var collection = database.GetCollection<BsonDocument>("user_table");
-           //
-                       //insert document
-           //var document = new BsonDocument
-           //{
-           //
-           //  { "userType", "student" },
+            var searchFilter = Builders<BsonDocument>.Filter.Eq("Email", email);
+            var result = collection.Find(searchFilter).ToList();
+            int i = 0;
+            foreach (var doc in result)
+            {
+                i = i + 1;
+            }
 
-           //it is possible to assign attributes like following
-           //user name
-           //{ "userName", "Veli" },
-           //{ "surName", "Demir" },
-           //{ "email", "ali.demir@ug.bilkent.edu.tr" },
-           //{ "psswd", "123123" },
+            if (i > 0) return true;
+            return false;
+        }
+        public bool emailPassword(string email, string password)
+        {
+            var database = client.GetDatabase(dbname);
+            var collection = database.GetCollection<BsonDocument>(databaseName);
 
-           //PASSING ARRAY
-           //{ "CourseList", new BsonArray { "CS461", "CS315" } },
-           //{ "AssignmentList", new BsonArray { "" } },
-           //{ "ProjectList", new BsonArray { "Term Project 315" } },
-           //{ "GroupList", new BsonArray { "B14" } },
+            var searchEmail = Builders<BsonDocument>.Filter.Eq("Email", email);
+            var searchPassword = Builders<BsonDocument>.Filter.Eq("Password", password);
+            var resultEmail = collection.Find(searchEmail).ToList();
+            var resultPassword = collection.Find(searchPassword).ToList();
+            if (resultEmail == resultPassword) return true;
+            return false;
+        }
 
-           //PASSING OBJ
-           //{ "size", new BsonDocument { { "attribute_0", 28 }, { "attribute_1", 35.5 }, { "attribute_2", "cm" } } }
-           //};
-           //collection.InsertOne(document);
+        //    static void Connect()
+        //    {
+        //var client = new MongoDB.Driver.MongoClient("mongodb+srv://yigit:0Bijmmtw7s8XtX9x@cluster0.zosoz.mongodb.net/peereview?retryWrites=true&w=majority");
+        //Db name 
+        //var database = client.GetDatabase("peereview");
+        //To reach Collection
+        //var collection = database.GetCollection<BsonDocument>("user_table");
+        //
+        //insert document
+        //var document = new BsonDocument
+        //{
+        //
+        //  { "userType", "student" },
 
-           //Retrive everything 
-           //var filter = Builders<BsonDocument>.Filter.Empty;
-           //var result = collection.Find(filter).ToList();
+        //it is possible to assign attributes like following
+        //user name
+        //{ "userName", "Veli" },
+        //{ "surName", "Demir" },
+        //{ "email", "ali.demir@ug.bilkent.edu.tr" },
+        //{ "psswd", "123123" },
 
-           //Retrive according to filter
-           //var filter = Builders<BsonDocument>.Filter.Eq("dogOrCat", "Ali");
-           //var result = collection.Find(filter).ToList();
+        //PASSING ARRAY
+        //{ "CourseList", new BsonArray { "CS461", "CS315" } },
+        //{ "AssignmentList", new BsonArray { "" } },
+        //{ "ProjectList", new BsonArray { "Term Project 315" } },
+        //{ "GroupList", new BsonArray { "B14" } },
 
-           //step
-           //foreach (var doc in result)
-           //{
-           //Console.WriteLine(doc.ToJson());
-           //}
-           //Console.WriteLine("Connection Open!");
-           //}
-           }
+        //PASSING OBJ
+        //{ "size", new BsonDocument { { "attribute_0", 28 }, { "attribute_1", 35.5 }, { "attribute_2", "cm" } } }
+        //};
+        //collection.InsertOne(document);
+
+        //Retrive everything 
+        //var filter = Builders<BsonDocument>.Filter.Empty;
+        //var result = collection.Find(filter).ToList();
+
+        //Retrive according to filter
+        //var filter = Builders<BsonDocument>.Filter.Eq("dogOrCat", "Ali");
+        //var result = collection.Find(filter).ToList();
+
+        //step
+        //foreach (var doc in result)
+        //{
+        //Console.WriteLine(doc.ToJson());
+        //}
+        //Console.WriteLine("Connection Open!");
+        //}
+    }
 }
