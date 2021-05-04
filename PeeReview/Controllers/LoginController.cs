@@ -6,9 +6,7 @@ namespace PeeReview.Controllers
     {
         public ActionResult Login()
         {
-            Connector conn = new Connector("UserTable");
-            var result = collection.Find(filter).ToList();
-            if ()
+            //retreival of users here
             return View();
         }
 
@@ -29,7 +27,7 @@ namespace PeeReview.Controllers
         * Assuming data is taken from the ui
         * 
         */
-        public bool LogInDal(string email, string pw)
+        public bool LogInDal(string email, string pw)//What is this?
         {
             //check email in system
             //check if it is the correct pw

@@ -1,4 +1,5 @@
 using System.Web.Mvc;
+using PeeReview.Models;
 
 namespace PeeReview.Controllers
 {
@@ -6,6 +7,8 @@ namespace PeeReview.Controllers
     {
         public ActionResult CoursesGrader()
         {
+            Grader grader = new Grader("Grader 01", "Surnmae", "r@g","pass");
+            ViewBag.Message = grader;
             return View();
         }
 

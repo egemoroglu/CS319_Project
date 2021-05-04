@@ -1,4 +1,5 @@
 using System.Web.Mvc;
+using PeeReview.Models;
 
 namespace PeeReview.Controllers
 {
@@ -6,6 +7,8 @@ namespace PeeReview.Controllers
     {
         public ActionResult AssignmentsInsTa()
         {
+            Instructor instructor = new Instructor("instrName", "instrSur", "fe", "fers");
+            ViewBag.Message = instructor;
             return View();
         }
         public ActionResult CoursesInstructor() //merge all detailed

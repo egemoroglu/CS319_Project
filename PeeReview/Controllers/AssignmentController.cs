@@ -1,4 +1,5 @@
 using System.Web.Mvc;
+using PeeReview.Models;
 
 namespace PeeReview.Controllers
 {
@@ -6,10 +7,12 @@ namespace PeeReview.Controllers
     {
         public ActionResult ReviewResponses()
         {
+            
             return View();
         }
         public ActionResult DetailedAssignmentStudent() //merge all detailed
         {
+            
             return View();
         }
         public ActionResult GroupAssignmentsStudent()//merge all assignment
