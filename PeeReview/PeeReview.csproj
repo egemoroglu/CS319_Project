@@ -198,22 +198,31 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AnalysisCalculationStrategy.cs" />
+    <Compile Include="Models\AssignmentViewModel.cs" />
     <Compile Include="Models\CalcualteAverageEvaluationStrategy.cs" />
     <Compile Include="Models\Assessment.cs" />
     <Compile Include="Models\Assignment.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\CourseViewModel.cs" />
+    <Compile Include="Models\EvalauteViewModel.cs" />
     <Compile Include="Models\Evaluation.cs" />
     <Compile Include="Models\CompletedSubmission.cs" />
     <Compile Include="Models\Grader.cs" />
+    <Compile Include="Models\GraderMPViewModel.cs" />
     <Compile Include="Models\Graph.cs" />
     <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\GroupViewModel.cs" />
     <Compile Include="Models\Instructor.cs" />
+    <Compile Include="Models\InstructorMPViewModel.cs" />
     <Compile Include="Models\IOberverNotification.cs" />
+    <Compile Include="Models\LogivViewModel.cs" />
+    <Compile Include="Models\NotificaionViewModel.cs" />
     <Compile Include="Models\Notification.cs" />
     <Compile Include="Models\Picture.cs" />
     <Compile Include="Models\Note.cs" />
     <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\ProjectViewModel.cs" />
     <Compile Include="Models\Response.cs" />
     <Compile Include="Models\Review.cs" />
     <Compile Include="Models\setUniqueIDBehaviour.cs" />

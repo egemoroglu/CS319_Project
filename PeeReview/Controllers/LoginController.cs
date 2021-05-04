@@ -6,7 +6,23 @@ namespace PeeReview.Controllers
     {
         public ActionResult Login()
         {
+            Connector conn = new Connector("UserTable");
+            var result = collection.Find(filter).ToList();
+            if ()
             return View();
+        }
+
+        public ActionResult StudentMainPage()
+        {
+            return View("~/Views/StudentMainPage");
+        }
+        public ActionResult InstructorMainPage()
+        {
+            return View("~/Views/InstructorMainPage");
+        }
+        public ActionResult GraderMainPage()
+        {
+            return View("~/Views/GraderMainPage");
         }
 
         /**
