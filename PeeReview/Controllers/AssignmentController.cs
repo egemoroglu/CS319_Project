@@ -15,7 +15,21 @@ namespace PeeReview.Controllers
             
             return View();
         }
+        public ActionResult DetailedAssignmentTa() //merge all detailed
+        {
+            
+            return View();
+        }
+        public ActionResult DetailedAssignmentInst() //merge all detailed
+        {
+            
+            return View();
+        }
         public ActionResult GroupAssignmentsStudent()//merge all assignment
+        {
+            return View();
+        }
+        public ActionResult DetailedNotCompletedAssignmentStudent() //merge all detailed
         {
             return View();
         }
@@ -23,7 +37,10 @@ namespace PeeReview.Controllers
         {
             return View();
         }
-
+        public ActionResult GroupAssignmentsInsTa() //merge all detailed
+        {
+            return View();
+        }
         public bool AddAssignment(Assignment assignment)
         {
             //Add to db
