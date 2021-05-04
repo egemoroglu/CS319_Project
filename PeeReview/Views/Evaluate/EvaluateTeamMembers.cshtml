@@ -1,7 +1,8 @@
+@using PeeReview.Models
 
 
 @{
-    
+    EvalauteViewModel evm = ViewBag.Message; 
 }
 
 <!doctype html>
@@ -17,106 +18,79 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-sm navbar-dark bg-secondary">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-secondary">
         
-        <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 
             
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="pp" src="img/3lines.png" alt="resme alternatif yazı" width="20" height="20"></a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownId">
-                        <a class="dropdown-item" href="Profile.html">My Profile</a>
-                        <a class="dropdown-item" href="CoursesStudent.html">My Courses</a>
-                        <a class="dropdown-item" href="#">My Assignments</a>
-                        <a class="dropdown-item" href="#">My Group</a>
-                        <a class="dropdown-item" href="#">My Grades</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Sign Out</a>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="pp" src="img/3lines.png" alt="resme alternatif yazı" width="20" height="20"></a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownId">
+                      <a class="dropdown-item" href="Profile.html">My Profile</a>
+                      <a class="dropdown-item" href="CoursesStudent.html">My Courses</a>
+                      <a class="dropdown-item" href="#">My Assignments</a>
+                      <a class="dropdown-item" href="#">My Group</a>
+                      <a class="dropdown-item" href="#">My Grades</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Sign Out</a>
                         
   
-                    </div>
-                </li>
+                  </div>
+              </li>
 
-                <li class="nav-item active">
+              <li class="nav-item active">
                   <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
               </li>
 
               <li class="nav-item active">
-                <a class="nav-link" href="#">Notifications<span class="sr-only">(current)</span></a>
-            </li>
+                  <a class="nav-link" href="#">Notifications<span class="sr-only">(current)</span></a>
+              </li>
 
             
                 
 
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
-
-    <a class="assignment-title"><b>Assignment1</b></a><br />
-    <hr class="line" width="1300" height="100"/>
-    <form class="member1" name="form" action="index.asp" method="post">
-        <a class="member-title1"><b>Member1</b></a><br />
-        <a class="criteria-title11"><b>Criteria1</b></a>
-        <input class="grade11" type="text" placeholder="                  /10"><br />
-        <a class="criteria-title12"><b>Criteria2</b></a>
-        <input class="grade12" type="text" placeholder="                  /10"><br />
-        <a class="criteria-title13"><b>Criteria3</b></a>
-        <input class="grade13" type="text" placeholder="                  /10"><br />
-        <input class="note1" type="text" placeholder="notes">
-        <a href="#" class="evaluate-btn1" role="button"><Center>Evaluate</Center></a>
-     </form>
-     <form class="member2" name="form" action="index.asp" method="post">
-        <a class="member-title2"><b>Member2</b></a><br />
-        <a class="criteria-title21"><b>Criteria1</b></a>
-        <input class="grade11" type="text" placeholder="                  /10"><br />
-        <a class="criteria-title22"><b>Criteria2</b></a>
-        <input class="grade12" type="text" placeholder="                  /10"><br />
-        <a class="criteria-title23"><b>Criteria3</b></a>
-        <input class="grade23" type="text" placeholder="                  /10"><br />
-        <input class="note2" type="text" placeholder="notes">
-        <a href="#" class="evaluate-btn2" role="button"><Center>Evaluate</Center></a>
-     </form>
-     <form class="member3" name="form" action="index.asp" method="post">
-        <a class="member-title3"><b>Member3</b></a><br />
-        <a class="criteria-title31"><b>Criteria1</b></a>
-        <input class="grade11" type="text" placeholder="                  /10"><br />
-        <a class="criteria-title32"><b>Criteria2</b></a>
-        <input class="grade12" type="text" placeholder="                  /10"><br />
-        <a class="criteria-title33"><b>Criteria3</b></a>
-        <input class="grade33" type="text" placeholder="                  /10"><br />
-        <input class="note3" type="text" placeholder="notes">
-        <a href="#" class="evaluate-btn3" role="button"><Center>Evaluate</Center></a>
-     </form>
-     <form class="member4" name="form" action="index.asp" method="post">
-        <a class="member-title4"><b>Member4</b></a><br />
-        <a class="criteria-title41"><b>Criteria1</b></a>
-        <input class="grade11" type="text" placeholder="                  /10"><br />
-        <a class="criteria-title42"><b>Criteria2</b></a>
-        <input class="grade12" type="text" placeholder="                  /10"><br />
-        <a class="criteria-title43"><b>Criteria3</b></a>
-        <input class="grade13" type="text" placeholder="                  /10"><br />
-        <input class="note4" type="text" placeholder="notes">
-        <a href="#" class="evaluate-btn4" role="button"><Center>Evaluate</Center></a>
-     </form>
-     <form class="member5" name="form" action="index.asp" method="post">
-        <a class="member-title5"><b>Member5</b></a><br />
-        <a class="criteria-title11"><b>Criteria1</b></a>
-        <input class="grade11" type="text" placeholder="                  /10"><br />
-        <a class="criteria-title12"><b>Criteria2</b></a>
-        <input class="grade12" type="text" placeholder="                  /10"><br />
-        <a class="criteria-title13"><b>Criteria3</b></a>
-        <input class="grade13" type="text" placeholder="                  /10"><br />
-        <input class="note1" type="text" placeholder="notes">
-        <a href="#" class="evaluate-btn5" role="button"><Center>Evaluate</Center></a>
-     </form>
-
-
-     
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+      </div>
+  </nav>
+  <a class="assignment-title"><b>Assignment1</b></a><br />
+   <hr class="line" width="1300" height="100"/>
+@if (evm.group.students.Count > 0)
+{
+    foreach (Student student in evm.group.students)
+    {
+        <form class="member1" name="form" action="index.asp" method="post">
+            <a class="member-title1"><b>@student.Name</b></a><br />
+            @if (evm.evaluation.Criteria.Count > 0)
+            {
+                foreach (string criteria in evm.evaluation.Criteria)
+                {
+                    <a class="criteria-title11"><b>@criteria</b></a>
+                    <input class="grade11" type="text" placeholder="                  /10"><br />
+                }
+                <input class="note1" type="text" placeholder="notes">
+                <a href="#" class="evaluate-btn1" role="button"><Center>Evaluate</Center></a>
+                                                                                         
+            }
+            else
+            {
+                <a class="no-criteria"><b>No criteria</b></a>
+            }
+        </form>
+       
+    }
+    
+}
+else
+        {
+            <a class="No-students"><b>No students</b></a> 
+        }
+   
+   
      
      
 

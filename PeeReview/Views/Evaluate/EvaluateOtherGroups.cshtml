@@ -1,5 +1,8 @@
+@using PeeReview.Models
+
 @{
-    
+    EvalauteViewModel evm = ViewBag.Message; 
+
 }
 <!doctype html>
 <html lang="en">
@@ -63,24 +66,26 @@
     <a class="assignment-description"><b>Assignment Description</b></a>
     <label class="duz-cerceve">Assignment Description</label><br /><br />
     <center><img class="file" src="img/file.png" alt="resme alternatif yazı" width="20" height="20"></center>
-    <a class="submission-file" href="Profile.html">Submission File</a>
+  <a class="submission-file" href="Profile.html">Submission File</a>
+  
+<a class="group-evaluation"><b>Evaluate Group</b></a>
+   @if (evm.evaluation.Criteria.Count > 0)
+              {
+                  foreach (string criteria in evm.evaluation.Criteria)
+                  {
+                      <a class="criteria-title11"><b>@criteria</b></a>
+                      <input class="grade11" type="text" placeholder="                  /10"><br />
+                  }
+                  <input class="note1" type="text" placeholder="notes">
+                  <a href="#" class="evaluate-btn1" role="button"><Center>Evaluate</Center></a>
+                                                                                           
+              }
+              else
+              {
+                  <a class="no-criteria"><b>No criteria</b></a>
+              }
 
-    <form class="criterias" name="form" action="index.asp" method="post">
-        <a class="criteria-title1"><b>Criteria1</b></a>
-        <input class="grade1" type="text" placeholder="                  /10"><br />
-        <a class="criteria-title2"><b>Criteria2</b></a>
-        <input class="grade2" type="text" placeholder="                  /10"><br />
-        <a class="criteria-title3"><b>Criteria3</b></a>
-        <input class="grade3" type="text" placeholder="                  /10"><br />
-        <a class="criteria-title4"><b>Criteria4</b></a>
-        <input class="grade4" type="text" placeholder="                  /10"><br />
-        <a class="criteria-title5"><b>Criteria5</b></a>
-        <input class="grade5" type="text" placeholder="                  /10"><br />
-        <a class="criteria-title6"><b>Criteria6</b></a>
-        <input class="grade6" type="text" placeholder="                  /10"><br />
-        <input class="note" type="text" placeholder="notes">
-        <a href="#" class="submit-btn" role="button"><Center>Submit</Center></a>
-     </form>
+
 
 
       
