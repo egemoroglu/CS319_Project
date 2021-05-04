@@ -1,10 +1,11 @@
+@using PeeReview.Models
 @{
-    
+    Group group = ViewBag.Message;
 }
 <!doctype html>
 <html lang="en">
   <head>
-    <title>My Group</title>
+    <title>@group.name</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -76,11 +77,17 @@
                         Members
                     </button>
             <div class="dropdown-menu" aria-labelledby="triggerId">
-                <a class="dropdown-item" href="#">Member1</a>
-                <a class="dropdown-item" href="#">Member2</a>
-                <a class="dropdown-item" href="#">Member3</a>
-                <a class="dropdown-item" href="#">Member4</a>
-                <a class="dropdown-item" href="#">Member5</a>
+                @if (group.students.Count > 0)
+                {
+                    foreach (Student student in group.students)
+                    {
+                        <a class="dropdown-item" href="#">@student.Name</a>
+                    }
+                }
+                else
+                {
+                    
+                }
             </div>
         </div>
         <div class="past-assignments">
@@ -89,9 +96,18 @@
                         Past Assignments
                     </button>
             <div class="dropdown-menu" aria-labelledby="triggerId">
-                <a class="dropdown-item" href="#">Assignment1</a>
-                <a class="dropdown-item" href="#">Assignment2</a>
-                <a class="dropdown-item" href="#">Assignment3</a>
+                @if (group.assignments.Count > 0)
+                {
+                    foreach (Assignment assignment in group.assignments)
+                    {
+                        <a class="dropdown-item" href="#">@assignment.title</a>
+                     }
+                       }
+                    else
+                {
+                                    
+                }
+
             </div>
         </div>
         <div class="grades">
@@ -100,9 +116,18 @@
                         Evaluations
                     </button>
             <div class="dropdown-menu" aria-labelledby="triggerId">
-                <a class="dropdown-item" href="#">Evaluation1</a>
-                <a class="dropdown-item" href="#">Evaluation2</a>
-                <a class="dropdown-item" href="#">Evaluation3</a>
+                 @if (group.groupAverageEvals.Count > 0)
+                                {
+                                    foreach (KeyValuePair<string, double> dic in group.groupAverageEvals)
+                                    {
+                                        <a class="dropdown-item" href="#">@dic.Value</a>
+                                     }
+                                       }
+                                    else
+                                {
+                                                    
+                                }
+
             </div>
         </div>
         <div class="evaluations">
@@ -111,9 +136,17 @@
                         Grades
                     </button>
             <div class="dropdown-menu" aria-labelledby="triggerId">
-                <a class="dropdown-item" href="#">Grade1</a>
-                <a class="dropdown-item" href="#">Grade2</a>
-                <a class="dropdown-item" href="#">Grade3</a>
+                @if (group.assignments.Count > 0)
+                         {
+                                  foreach (Assignment assignment in group.assignments)
+                                  {
+                                       <a class="dropdown-item" href="#">@assignment.grade</a>
+                                       }
+                                        }
+                                             else{}
+                                    
+                                                      
+
             </div>
         </div>
         <a href="#" class="exit-btn" role="button"><Center>Exit Group</Center></a>

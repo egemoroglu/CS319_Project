@@ -28,7 +28,7 @@ namespace PeeReview.Models
             setDeadline(stringDeadlineDateTime);
         }
 
-        public void addGroup(string groupName)
+        public void addGroup(Group group)
         {
             // Groups.Add(group) TODO find group and add it
          }

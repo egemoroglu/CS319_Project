@@ -53,5 +53,10 @@ namespace PeeReview.Models
         {
             Students.Remove(student);
         }
+
+        public void addGroupToProject(Group group, Project project)
+        {
+            project.addGroup(group);
+        }
     }
 }

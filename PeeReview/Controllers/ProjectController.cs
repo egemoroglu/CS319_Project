@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Runtime.Remoting.Messaging;
 using System.Web.Mvc;
 using PeeReview.Models;
@@ -80,6 +81,8 @@ namespace PeeReview.Controllers
         }
         public ActionResult SendRequestToJoinAGroup() //merge all detailed
         {
+            
+
             Course course = new Course("OOOOPP", "CS319",new Instructor("fiIs","fiSu","qw@", "123"));
             course.addProject(new Project("desgin", "this is our", course, "23/12/2021"));
             course.addStudent(new Student("StFr","StSur","12@sda", "123"));
