@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Messaging;
 
 namespace PeeReview.Models
 
@@ -9,7 +10,9 @@ namespace PeeReview.Models
         public List<Grader> Graders { get; }
 
         public Instructor(string name, string surname, string email, string password)
-            : base(name, surname, email, password) { }
+            : base(name, surname, email, password)
+        {
+        }
 
 
         public void addGrader(string graderName, string courseCode)

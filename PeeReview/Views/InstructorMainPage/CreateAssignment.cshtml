@@ -1,5 +1,6 @@
+@using PeeReview.Models
 @{
-    
+    Instructor instructor = ViewBag.Message;
 }
 <!doctype html>
 <html lang="en">
@@ -68,13 +69,35 @@
     
     <select class="combobox" name="dep" id="dep">
         <option value="">Select Course</option>
-        <option value="CS 319">CS 319</option>
+        @if (instructor.courses.Count > 0)
+        {
+            foreach (Course course in instructor.courses)
+            {
+                <option value="Course Code">@course.CourseCode</option>
+            }
+        }
+        else
+        {
+            
+        }
       </select>
 
-    <select class="combobox1" name="dep" id="dep">
-        <option value="">Select Project</option>
-        <option value="CS 319Term Project">CS 319Term Project</option>
-      </select>  
+  <select class="combobox1" name="dep" id="dep">
+      <option value="">Select Project</option>
+      @if (instructor.projects.Count > 0)
+      {
+          foreach (Project project in instructor.projects)
+          {
+              <option value="Project Name">@project.Name</option>
+          }
+      }
+      else
+      {
+
+      }
+      <option value="">Select Project</option>
+
+  </select>  
  
       
     <style>

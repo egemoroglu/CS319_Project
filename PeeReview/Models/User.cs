@@ -15,6 +15,10 @@ namespace PeeReview.Models
             Email = email;
             Password = password;
             IDSetter = new defaultSetUniqueID();
+            projects = new List<Project>();
+            courses = new List<Course>();
+            assignments = new List<Assignment>();
+            notifications = new List<Notification>();
             IDSetter.setUniqueID(ID);
         }
 
