@@ -1,9 +1,21 @@
+using PeeReview.Models;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace PeeReview.Controllers
 {
     public class ProjectController : Controller
     {
+        List<Group> groups = new List<Group>();
+
+        public void AddProjectGroup(Project project, Group group)
+        {
+            groups.Insert(groups.Count, group);
+            //Add to db
+            Connector conn = new Connector("ProjectsTable");
+            conn.addProjectGroup(project, group);
+        }
+
         public ActionResult AssignStudentsToGroups()
         {
             return View();
