@@ -17,6 +17,7 @@ namespace PeeReview.Models
                 this.marks.Add(mark);
             }
             Review = review;
+            IDSetter = new defaultSetUniqueID();
             IDSetter.setUniqueID(ID);
         }
         Assessment()

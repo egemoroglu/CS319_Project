@@ -24,6 +24,7 @@ namespace PeeReview.Models
             Name = name;
             SubmitterName = submitterName;
             Overview = new Note(SubmitterName, overview);
+            IDSetter = new defaultSetUniqueID();
             IDSetter.setUniqueID(ID);
             SubmissionDateTime = DateTime.Now;
      

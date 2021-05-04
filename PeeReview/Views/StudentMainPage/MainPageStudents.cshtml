@@ -1,5 +1,6 @@
+@using PeeReview.Models
 @{
-    
+  var data = ViewBag.Message;
 }
 <!doctype html>
 <html lang="en">
@@ -69,21 +70,48 @@
     <a href="#" class="evaluate-btn" role="button"><Center>Evaluate Team Members</Center></a>
     <label class="duz-cerceve"></label>
     <label class="duz-cerceve1"></label>
-    <label class="duz-cerceve2"></label>
-    <a class="my-assignments"><b>My Assignments</b></a>
+  <label class="duz-cerceve2"></label>
+  @if (data.assignments.Count > 0)
+  {
+    foreach (var assignment in data.assignments)
+    {
+      <a class="assignment-title" href="#">@assignment.title</a><br>
+      <a class="assignment-description" href="#">@assignment.description</a><br> 
+      <a class="assignment-deadline" href="#">@assignment.deadlineDateTime.ToString("yyyy MMMM dd")</a><br>
+    }
+  }
+  else
+  {
+    <a class="assignment3" href="#">No assignment yet</a>
+  }
+  <a class="my-assignments"><b>My Assignments</b></a>
 
     <a class="assignment1" href="#">Assignment 1</a><br>
     <a class="assignment2" href="#">Assignment 2</a><br>
     <a class="assignment3" href="#">Assignment 3</a>
 
-    <a class="my-courses"><b>My Courses</b></a>
-
-    <a class="course1" href="#">Course 1</a><br>
-    <a class="course2" href="#">Course 2</a><br>
-    <a class="course3" href="#">Course 3</a>
-
-    <a class="my-evaluations"><b>My Evaluations</b></a>
-
+  <a class="my-courses"><b>My Courses</b></a>
+  @if (data.courses.Count > 0)
+  {
+    foreach (var course in data.courses)
+    {
+      <a class="course1" href="#">@course.CourseName</a>
+      <br>
+    }
+  }
+  else {
+    <a class="message" href="#">No courses yet </a><br>
+  }
+  
+ @if (data.evaluations.Count > 0)
+ {
+   foreach (var eval in data.evaluations)
+   {
+     <a class="evaluation1" href="#"></a>
+     <br>
+   }
+   <a class="my-evaluations"><b>My Evaluations</b></a>
+ }
     <a class="evaluation1" href="#">Evaluation 1</a><br>
     <a class="evaluation2" href="#">Evaluation 2</a><br>
     <a class="evaluation3" href="#">Evaluation 3</a>

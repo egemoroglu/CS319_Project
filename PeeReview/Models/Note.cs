@@ -11,6 +11,7 @@ namespace PeeReview.Models
         {
             Author = author;
             TextContent = textContent;
+            IDSetter = new defaultSetUniqueID();
             IDSetter.setUniqueID(ID);
         }
     }

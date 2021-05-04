@@ -22,6 +22,7 @@ namespace PeeReview.Models
             Name = name;
             Course = course;
             Description = new Note("Course Instructor", descrpition); 
+            IDSetter = new defaultSetUniqueID();
             IDSetter.setUniqueID(ID);
             ProjectDateTime = DateTime.Now;
             setDeadline(stringDeadlineDateTime);

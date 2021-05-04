@@ -8,13 +8,13 @@ namespace PeeReview.Models
 {
     public abstract class User
     {
-        public User(string name, string surName, string email, string password,Picture pic)
+        public User(string name, string surName, string email, string password)
         {
             Name = name;
             SurName = surName;
             Email = email;
             Password = password;
-            Pic = pic;
+            IDSetter = new defaultSetUniqueID();
             IDSetter.setUniqueID(ID);
         }
 

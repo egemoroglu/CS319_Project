@@ -25,6 +25,7 @@ namespace PeeReview.Models
             CourseName = courseName;
             CourseCode = courseCode;
             Instructor = instructor;
+            IDSetter = new defaultSetUniqueID();
             IDSetter.setUniqueID(ID);
         }
 

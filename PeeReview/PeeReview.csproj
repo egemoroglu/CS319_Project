@@ -218,6 +218,7 @@
     <Compile Include="Models\Review.cs" />
     <Compile Include="Models\setUniqueIDBehaviour.cs" />
     <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\StudentMPViewModel.cs" />
     <Compile Include="Models\Submission.cs" />
     <Compile Include="Models\Manager.cs" />
     <Compile Include="Models\User.cs" />
