@@ -33,7 +33,7 @@ namespace PeeReview.Controllers
             Project project = new Project("prNa", "Description here", course, "21/12/2021");
             course.addProject(project);
             Group group = new Group("group victory",new Course("CS333","213",new Instructor("du","mm","yy","123"))) ;
-            course.addGroupToProject(group,project);
+            //course.addGroupToProject(group,project);
             ViewBag.Message = group;
             return View();
         }

@@ -14,6 +14,8 @@ namespace PeeReview.Controllers
         }
         public ActionResult DetailedCoursePageStudent() //merge all detailed
         {
+            Course course = new Course("OOP design", "CS319", new Instructor("InstrFR", "instrSu", "Instr@", "123"));
+            ViewBag.Message = course;
             return View();
         }
 

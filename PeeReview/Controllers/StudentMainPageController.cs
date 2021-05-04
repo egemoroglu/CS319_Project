@@ -19,6 +19,9 @@ namespace PeeReview.Controllers
         }
         public ActionResult CoursesStudent()
         {
+            StudentMPViewModel modelPassed = new StudentMPViewModel();
+            modelPassed.courses.Add(new Course("OOpCS319", "CS319", new Instructor("xx","ee","aa","123")));
+            ViewBag.Message = modelPassed;
             return View();
         }
 

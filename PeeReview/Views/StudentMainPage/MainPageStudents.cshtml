@@ -27,11 +27,11 @@
                   <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="pp" src="img/3lines.png" alt="resme alternatif yazı" width="20" height="20"></a>
                       <div class="dropdown-menu" aria-labelledby="dropdownId">
-                          <a class="dropdown-item" href="Profile.html">My Profile</a>
-                          <a class="dropdown-item" href="CoursesStudent.html">My Courses</a>
-                          <a class="dropdown-item" href="#">My Assignments</a>
-                          <a class="dropdown-item" href="#">My Group</a>
-                          <a class="dropdown-item" href="#">My Grades</a>
+                          <a class="dropdown-item" href="../Shared/Profile.cshtml">My Profile</a>
+                          <a class="dropdown-item" href="../StudentMainPage/CoursesStudent">My Courses</a>
+                          <a class="dropdown-item" href="../StudentMainPage/AssignmentsStudent">My Assignments</a>
+                          <a class="dropdown-item" href="../Group/DetailedYourGroupStudents">My Group</a>
+                        
                           <div class="dropdown-divider"></div>
                           <a class="dropdown-item" href="#">Sign Out</a>
 
@@ -40,11 +40,11 @@
                   </li>
 
                   <li class="nav-item active">
-                      <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="../StudentMainPage/MainPageStudents">Home<span class="sr-only">(current)</span></a>
                   </li>
 
                   <li class="nav-item active">
-                      <a class="nav-link" href="#">Notifications<span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="../Notifications/NotificationsStudent">Notifications<span class="sr-only">(current)</span></a>
                   </li>
 
 
@@ -67,7 +67,7 @@
           <div class="tab-pane fade" id="tab5Id" role="tabpanel"></div>
       </div>
 
-      <a href="#" class="evaluate-btn" role="button"><Center>Evaluate Team Members</Center></a>
+      <a href="../Assignment/GroupAssignmentsStudent" class="evaluate-btn" role="button"><Center>Evaluate Team Members</Center></a>
       <label class="duz-cerceve"></label>
       <label class="duz-cerceve1"></label>
       <label class="duz-cerceve2"></label>
@@ -78,9 +78,7 @@
               <a class="assignment-title" href="#">@assignment.title</a><br>
               <a class="assignment-description" href="#">@assignment.description</a><br>
               <a class="assignment-deadline" href="#">@assignment.deadlineDateTime.ToString("yyyy MMMM dd")</a><br>
-              <a class="assignment1" href="#">Assignment 1</a><br>
-              <a class="assignment2" href="#">Assignment 2</a><br>
-              <a class="assignment3" href="#">Assignment 3</a>
+ 
           }
       }
       else
@@ -97,7 +95,7 @@
       {
           foreach (var course in data.courses)
           {
-              <a class="course1" href="#">@course.CourseName</a>
+              <a class="course1" href="../Course/DetailedCoursePageStudent">@course.CourseName</a>
               <br>
           }
       }
@@ -106,24 +104,7 @@
           <a class="message" href="#">No courses yet </a><br>
       }
 
-      @if (data.evaluations.Count > 0)
-      {
-          foreach (var eval in data.evaluations)
-          {
-              <a class="evaluation1" href="#"></a>
-              <br>
-              <a class="evaluation1" href="#">Evaluation 1</a><br>
-              <a class="evaluation2" href="#">Evaluation 2</a><br>
-              <a class="evaluation3" href="#">Evaluation 3</a>
-                      }
-
-                  }
-                  else
-                  {
-                     
-          <a class="evaluation1" href="#">No evaluations yet</a><br>
-      
-      }
+ 
 
 
       <input class="checkbox1" type="checkbox" name="secim2">

@@ -296,7 +296,7 @@
     <Content Include="Views\Project\CreateGroup.cshtml" />
     <Content Include="Views\Project\FindGroupForStudent.cshtml" />
     <Content Include="Views\Project\GradingGroupPageInstTa.cshtml" />
-    <Content Include="Views\Project\GradingIndividuallyPageInstTA.cshtml" />
+    <Content Include="Views\Project\GradingIndividuallyPageInstTa.cshtml" />
     <Content Include="Views\Project\SendRequestToJoinAGroup.cshtml" />
     <Content Include="Views\Shared\ChangePasswordInstTa.cshtml" />
     <Content Include="Views\Shared\ChangePasswordStudent.cshtml" />

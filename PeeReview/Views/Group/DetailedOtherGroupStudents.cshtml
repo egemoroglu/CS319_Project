@@ -36,7 +36,7 @@
                 </li>
 
                 <li class="nav-item active">
-                  <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="../StudentMainPage/MainPageStudents.cshtml">Home<span class="sr-only">(current)</span></a>
               </li>
 
               <li class="nav-item active">
@@ -100,7 +100,7 @@
                                {
                                    foreach (Assignment assignment in group.assignments)
                                    {
-                                       <a class="dropdown-item" href="#">@assignment.title</a>
+                                       <a class="dropdown-item" href="../Assignment/DetailedAssignmentStudent.cshtml">@assignment.title</a>
                                     }
                                       }
                                    else
@@ -130,7 +130,7 @@
         </div>
     </form>
     <a class="chemistry-text"><b>Chemistry of the group is perfect!</b></a><br />
-    <a href="#" class="grade-btn" role="button"><Center>Evaluate</Center></a>
+    <a href="../Evaluate/EvaluateOtherGroups.cshtml" class="grade-btn" role="button"><Center>Evaluate</Center></a>
 
     
 

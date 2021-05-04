@@ -9,6 +9,10 @@ namespace PeeReview.Models
             this.name = name;
             this.parentCourse = parentCourse;
             students = new List<Student>();
+            projects = new List<Project>();
+            graders = new List<Grader>();
+            assignments = new List<Assignment>();
+            groupAverageEvals = new Dictionary<string, double>();
 
         }
 

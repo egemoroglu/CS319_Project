@@ -57,36 +57,63 @@
   </nav>
   <a class="assignment-title"><b>Assignment1</b></a><br />
    <hr class="line" width="1300" height="100"/>
-@if (evm.group.students.Count > 0)
-{
-    foreach (Student student in evm.group.students)
-    {
-        <form class="member1" name="form" action="index.asp" method="post">
-            <a class="member-title1"><b>@student.Name</b></a><br />
-            @if (evm.evaluation.Criteria.Count > 0)
-            {
-                foreach (string criteria in evm.evaluation.Criteria)
-                {
-                    <a class="criteria-title11"><b>@criteria</b></a>
-                    <input class="grade11" type="text" placeholder="                  /10"><br />
-                }
-                <input class="note1" type="text" placeholder="notes">
-                <a href="#" class="evaluate-btn1" role="button"><Center>Evaluate</Center></a>
-                                                                                         
-            }
-            else
-            {
-                <a class="no-criteria"><b>No criteria</b></a>
-            }
-        </form>
-       
-    }
-    
-}
-else
-        {
-            <a class="No-students"><b>No students</b></a> 
-        }
+<a class="assignment-title"><b>Assignment1</b></a><br />
+    <hr class="line" width="1300" height="100"/>
+    <form class="member1" name="form" action="index.asp" method="post">
+        <a class="member-title1"><b>Member1</b></a><br />
+        <a class="criteria-title11"><b>Criteria1</b></a>
+        <input class="grade11" type="text" placeholder="                  /10"><br />
+        <a class="criteria-title12"><b>Criteria2</b></a>
+        <input class="grade12" type="text" placeholder="                  /10"><br />
+        <a class="criteria-title13"><b>Criteria3</b></a>
+        <input class="grade13" type="text" placeholder="                  /10"><br />
+        <input class="note1" type="text" placeholder="notes">
+        <a href="#" class="evaluate-btn1" role="button"><Center>Evaluate</Center></a>
+     </form>
+     <form class="member2" name="form" action="index.asp" method="post">
+        <a class="member-title2"><b>Member2</b></a><br />
+        <a class="criteria-title21"><b>Criteria1</b></a>
+        <input class="grade11" type="text" placeholder="                  /10"><br />
+        <a class="criteria-title22"><b>Criteria2</b></a>
+        <input class="grade12" type="text" placeholder="                  /10"><br />
+        <a class="criteria-title23"><b>Criteria3</b></a>
+        <input class="grade23" type="text" placeholder="                  /10"><br />
+        <input class="note2" type="text" placeholder="notes">
+        <a href="#" class="evaluate-btn2" role="button"><Center>Evaluate</Center></a>
+     </form>
+     <form class="member3" name="form" action="index.asp" method="post">
+        <a class="member-title3"><b>Member3</b></a><br />
+        <a class="criteria-title31"><b>Criteria1</b></a>
+        <input class="grade11" type="text" placeholder="                  /10"><br />
+        <a class="criteria-title32"><b>Criteria2</b></a>
+        <input class="grade12" type="text" placeholder="                  /10"><br />
+        <a class="criteria-title33"><b>Criteria3</b></a>
+        <input class="grade33" type="text" placeholder="                  /10"><br />
+        <input class="note3" type="text" placeholder="notes">
+        <a href="#" class="evaluate-btn3" role="button"><Center>Evaluate</Center></a>
+     </form>
+     <form class="member4" name="form" action="index.asp" method="post">
+        <a class="member-title4"><b>Member4</b></a><br />
+        <a class="criteria-title41"><b>Criteria1</b></a>
+        <input class="grade11" type="text" placeholder="                  /10"><br />
+        <a class="criteria-title42"><b>Criteria2</b></a>
+        <input class="grade12" type="text" placeholder="                  /10"><br />
+        <a class="criteria-title43"><b>Criteria3</b></a>
+        <input class="grade13" type="text" placeholder="                  /10"><br />
+        <input class="note4" type="text" placeholder="notes">
+        <a href="#" class="evaluate-btn4" role="button"><Center>Evaluate</Center></a>
+     </form>
+     <form class="member5" name="form" action="index.asp" method="post">
+        <a class="member-title5"><b>Member5</b></a><br />
+        <a class="criteria-title11"><b>Criteria1</b></a>
+        <input class="grade11" type="text" placeholder="                  /10"><br />
+        <a class="criteria-title12"><b>Criteria2</b></a>
+        <input class="grade12" type="text" placeholder="                  /10"><br />
+        <a class="criteria-title13"><b>Criteria3</b></a>
+        <input class="grade13" type="text" placeholder="                  /10"><br />
+        <input class="note1" type="text" placeholder="notes">
+        <a href="#" class="evaluate-btn5" role="button"><Center>Evaluate</Center></a>
+     </form>
    
    
      
