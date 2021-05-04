@@ -7,10 +7,16 @@ namespace PeeReview.Controllers
     {
         public ActionResult CreateProject()
         {
+            Course course = new Course("OOP","CS319", 
+                new Instructor("Infrna", "InSur", "tr","223"));
+            ViewBag.Message = course;
             return View();
         }
         public ActionResult DetailedCoursePageStudent() //merge all detailed
         {
+            Course course = new Course("OOP","CS319", 
+                new Instructor("Infrna", "InSur", "tr","223"));
+            ViewBag.Message = course;
             return View();
         }
 
@@ -38,6 +44,9 @@ namespace PeeReview.Controllers
         
         public ActionResult GroupsPageStudent() //
        {
+           Course course = new Course("OOP","CS319", 
+               new Instructor("Infrna", "InSur", "tr","223"));
+           ViewBag.Message = course;
             return View();
         }
     }

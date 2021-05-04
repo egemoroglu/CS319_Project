@@ -41,10 +41,7 @@
               <li class="nav-item active">
                 <a class="nav-link" href="#">Notifications<span class="sr-only">(current)</span></a>
             </li>
-  
-            
                 
-  
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -71,10 +68,29 @@
             </div>
         </div>
         <div class="members">
+            @if (group.students.Count > 0)
+                        {
+                            foreach (Student student in group.students)
+                            {
+                                <div class="dropdown-menu" aria-labelledby="triggerId">
+                                    <a class="dropdown-item" href="#">@student.Name</a>
+                                    <a class="dropdown-item" href="#">@student.SurName</a>
+                            
+                                </div>
+                            }
+            
+                        }
+                        else
+                        {
+                            <div class="dropdown-menu" aria-labelledby="triggerId">
+                                <a class="dropdown-item" href="#">NO members</a>
+                            
+                            </div>
+                        }
             <button class="btn2 btn-secondary dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">
-                        Members
-                    </button>
+                Members
+            </button>
             <div class="dropdown-menu" aria-labelledby="triggerId">
                 <a class="dropdown-item" href="#">Member1</a>
                 <a class="dropdown-item" href="#">Member2</a>
@@ -98,6 +114,13 @@
                     </div>
                 }
 
+            }
+            else
+            {
+                <div class="dropdown-menu" aria-labelledby="triggerId">
+                    <a class="dropdown-item" href="#">NO Assignment</a>
+                
+                </div>
             }
 
             

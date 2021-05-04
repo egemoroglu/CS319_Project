@@ -33,7 +33,7 @@ namespace PeeReview.Controllers
             //check if it is the correct pw
             Connector conn = new Connector("UserTable");
             Connector sess = new Connector("Session");
-            sess.
+            
             return conn.emailPassword(email,pw);
         }
     }
