@@ -30,9 +30,9 @@ namespace PeeReview.Models
 
         }
 
-        protected void gradeAssignment(Assignment assignment, int grade)
+        public void assessSubmssion(Submission submission,Assessment assessment)
         {
-            assignment.setGrade(grade);
+            submission.assess(assessment); 
         }
 
         public void endorse(Comment  comment)
@@ -121,6 +121,10 @@ namespace PeeReview.Models
         {
             //remove from dateBase
 
+        }
+        public void assessProject(Project project, Assessment assessment)
+        {
+            project.assess(assessment);
         }
 
     }

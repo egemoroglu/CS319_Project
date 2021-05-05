@@ -3,7 +3,12 @@ using NotImplementedException = System.NotImplementedException;
 
 namespace PeeReview.Models
 {
-     public class CompletedSubmission : Submission  //contains a submission after done and closed, now we can review it and evaluate it
+    /*
+     * This class should be unused, since the evaluations are done even before grading
+     * The evaluations are very flexible that the differnce between a "finished/archived" submission and unfinished is just the grades
+     */
+     public class CompletedSubmission : Submission  //This class should be unused, since the evaluations are done even before grading
+         //contains a submission after done and closed, we can review it and evaluate it
     {
         private List<Review> Reviews { get; }
         private Assessment assessment;

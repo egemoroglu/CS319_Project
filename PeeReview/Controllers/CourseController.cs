@@ -5,6 +5,7 @@ using System.Web.Mvc;
 namespace PeeReview.Controllers
 {
     public class CourseController : Controller
+        //Status: Testing
     {
         List<Course> courses = new List<Course>();
 

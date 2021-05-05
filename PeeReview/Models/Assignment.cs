@@ -8,21 +8,19 @@ namespace PeeReview.Models
     public class Assignment
     {
                
-        public double grade { get; private set; }
+    
         public string title { get; private set; }
         public string description { get; private set; }
 
         public List<Submission> Submissions;
         public List<CompletedSubmission> CompletedSubmissions;
-        public Assignment nextIteration { get; private set; }
+        public Assignment nextIteration { get; private set; } //pointer to any another iteration
         public DateTime AssignmentDateTime { get; }
 
         public DateTime deadlineDateTime;
         public string deadlineErrorMessage { get; private set; }
-        public Evaluation Evaluation { get; private set; }
+       
 
-        public CalculateAverageEvaluationsStrategyDefault averageCalculator { get; set; }
-        
         public Assignment(string title,string description, string stringDeadlineDateTime)
         {
             this.title = title;
@@ -31,10 +29,7 @@ namespace PeeReview.Models
             setDeadline(stringDeadlineDateTime);
 
         }
-        public void setGrade(double grade)
-        {
-            this.grade = grade;
-        }
+
 
         public void setDeadline(string stringDeadlineDateTime)
         {

@@ -16,6 +16,7 @@ namespace PeeReview.Models
         public List<Assignment> Assignments { get; private set; }
         public DateTime ProjectDateTime { get; private set; }
         public string deadlineErrorMessage { get; private set; }
+        public Assessment Assessment { get; private set; }
 
         public Project(string name, string descrpition, Course course, string stringDeadlineDateTime  )
         {
@@ -30,13 +31,13 @@ namespace PeeReview.Models
 
         public void addGroup(Group group)
         {
-            // Groups.Add(group) TODO find group and add it
-         }
+            Groups.Add(group);
+        }
 
         public void removeGroup(Group group)
         {
-            //Groups.Remove(group);
-            // Groups.Add(group) TODO find group and add it
+            Groups.Remove(group);
+  
             
         }
         
@@ -54,11 +55,15 @@ namespace PeeReview.Models
         {
             if (!DateTime.TryParse(stringDeadlineDateTime, out DeadlineDateTime))
             {
-                // handle parse failure
                 DeadlineDateTime = DateTime.Today;
                 deadlineErrorMessage = "Invalied date/time format! Date and time set to today's 00:00:00";
-                //  return View(The view) TODO    
+               
             }
+        }
+
+        public void assess(Assessment assessment)
+        {
+            Assessment = assessment;
         }
     }
 }

@@ -186,7 +186,7 @@ namespace PeeReview.Controllers
 
                     public CalculateAverageEvaluationsStrategyDefault averageCalculator { get; set; }   */
 
-                { "AssignmentGrade", assignment.grade },
+              //  { "AssignmentGrade", assignment.grade },
                 { "AssignmentTitle", assignment.title },
                 { "AssignmentDescription", assignment.description },
                 { "AssignmentDeadline", assignment.deadlineDateTime },

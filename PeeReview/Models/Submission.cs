@@ -14,6 +14,11 @@ namespace PeeReview.Models
         public DateTime SubmissionDateTime { get; private set; }
 
         public string ID { get; private set; }
+        
+        public Evaluation Evaluation { get; private set; }
+        public Assessment Assessment { get; private set; }
+
+        public CalculateAverageEvaluationsStrategyDefault averageCalculator { get; set; }
 
         //file 
         public defaultSetUniqueID IDSetter { get; } 
@@ -30,6 +35,14 @@ namespace PeeReview.Models
      
         }
 
+        public void evalaute(Evaluation eval)
+        {
+            Evaluation = eval;
+        }
+        public void assess(Assessment assessment)
+        {
+            Assessment = assessment;
+        }
 
 
 

@@ -136,11 +136,11 @@
                         Grades
                     </button>
             <div class="dropdown-menu" aria-labelledby="triggerId">
-                @if (group.assignments.Count > 0)
+                @if (group.submissions.Count > 0)
                          {
-                                  foreach (Assignment assignment in group.assignments)
+                                  foreach (Submission submission in group.submissions)
                                   {
-                                       <a class="dropdown-item" href="#">@assignment.grade</a>
+                                       <a class="dropdown-item" href="#">@submission.Assessment.marks.Values</a>
                                        }
                                         }
                                              else{}

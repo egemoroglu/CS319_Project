@@ -10,14 +10,14 @@ namespace PeeReview.Models
             :base (name, surName, email, password) {}
 
         private List<Instructor> relevantInstructors;
-        protected void gradeAssignment(Assignment assignment, int grade)
+        public void assessSubmssion(Submission submission,Assessment assessment)
         {
-            assignment.setGrade(grade);
+            submission.assess(assessment); 
         }
         protected void extendDeadlineProject (Project project, string newDeadlineString){
             
             project.setDeadline(newDeadlineString);
-            //  return View(The view) TODO    
+             
             
         }
         
@@ -43,6 +43,11 @@ namespace PeeReview.Models
         public List<Instructor> getRelevantInstructors()
         {
             return relevantInstructors;
+        }
+
+        public void assessProject(Project project, Assessment assessment)
+        {
+            project.assess(assessment);
         }
     }
 }

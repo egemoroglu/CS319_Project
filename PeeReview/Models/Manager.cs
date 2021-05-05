@@ -3,7 +3,7 @@ using System.Configuration;
 
 namespace PeeReview.Models
 {
-    public class Manager //Change name, Singleton?
+    public class Manager //this will be deleted
     {
         private List<Course> courses;
         private List<Grader> graders;

@@ -13,23 +13,31 @@ namespace PeeReview.Models
             graders = new List<Grader>();
             assignments = new List<Assignment>();
             groupAverageEvals = new Dictionary<string, double>();
+            IDSetter.setUniqueID(ID);
 
         }
-
-        public GroupAnalysisCalculationStrategy analysis { get; private set; }
+        
         public string name { get; private set; }
-        private int uniqueCode;
+        public string ID { get; private set; }
+
+        public defaultSetUniqueID IDSetter { get; private set; }
+
+
         private double chemstryPoint; //double was favoured for smoother usage 
         public Course parentCourse { get; set; }
 
         public Evaluation GroupEvaluation { get; private set; }
-
+        public GroupAnalysisCalculationStrategy studentAnalysis { get; private set; }
+        public SubmissionGroupsAnalysisCalculationStrategy SubmissionAnalysis { get; private set; }
+        
+        
         public List<Student> students { get; private set; }
         public List<Project> projects{ get; private set; }
         public List<Grader> graders{ get; private set; }
         public List<Assignment> assignments{ get; private set; }
+        public List<Submission> submissions{ get; private set; }
         public Dictionary<string, double> groupAverageEvals { get; private set; }
-
+        public Dictionary<string, double> sunbmissionsGroupAverage{ get; private set; }
 
 
         public void addStudent(Student student)
@@ -59,8 +67,17 @@ namespace PeeReview.Models
         {
             assignments.Remove(assignment);
         }
+        public void addSubmission(Submission submission)
+        {
+            submissions.Add(submission);
+        }
 
-        
+        public void removeSubmission(Submission submission)
+        {
+            submissions.Remove(submission);
+        }
+
+
         public void addGrader(Grader grader)
         {
             graders.Add(grader);
@@ -72,7 +89,7 @@ namespace PeeReview.Models
 
         public string calcChem()
         {
-             chemstryPoint = analysis.calcChemsitry(this);
+             chemstryPoint = studentAnalysis.calcChemsitry(this);
             switch (chemstryPoint)
             {
               case  var _ when (chemstryPoint == 10 && chemstryPoint >=9):
@@ -104,6 +121,35 @@ namespace PeeReview.Models
             groupAverageEvals = GroupEvaluation.getAverage();
             return groupAverageEvals;
         }
-        
+        public Dictionary<string, string> gethighestStudentInEachCriteria()
+        {
+
+            return studentAnalysis.highOutlierEachCriteria(this); //can use names to retrieve students if necessary fo rany features
+        }
+        public Dictionary<string, string> getLowestStudentInEachCriteria()
+        {
+
+            return studentAnalysis.lowOutlierEachCriteria(this);//can use names to retrieve students if necessary fo rany features
+        }
+        public Dictionary<string, string> gethighestAssignmentInEachCriteria()
+        {
+
+            return SubmissionAnalysis.highOutlierEachCriteria(this); //can use names to retrieve assignment if necessary fo rany features
+        }
+        public Dictionary<string, string> getLowestAssignmentInEachCriteria()
+        {
+
+            return SubmissionAnalysis.lowOutlierEachCriteria(this);//can use names to retrieve assignment if necessary fo rany features
+        }
+
+        public Dictionary<string, double> getAverageOfAveragesStudent()
+        {
+            return studentAnalysis.calcAvgOfAvgs(this);
+        }
+        public Dictionary<string, double> getAverageOfAveragesAssignments()
+        {
+            return SubmissionAnalysis.calcAvgOfAvgs(this);
+        }
+
     }
 }

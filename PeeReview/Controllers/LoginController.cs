@@ -6,6 +6,7 @@ using System.Web.UI;
 namespace PeeReview.Controllers
 {
     public class LoginController : Controller
+        //Status: Testing
     {
         List<Models.User> userList = new List<Models.User>();
         List<Models.Student> studentList = new List<Models.Student>();

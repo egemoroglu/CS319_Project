@@ -33,9 +33,13 @@ namespace PeeReview.Models
          */
         public void addCriteria(string newCriteria)
         {
-            
-            Criteria.Add(newCriteria);
-            CriteriaAndGrade.Add(newCriteria, new List<int>()); //assigned values assigned to zero by default
+            if (!Criteria.Contains(newCriteria))
+            {
+                Criteria.Add(newCriteria);
+                CriteriaAndGrade.Add(newCriteria, new List<int>()); //assigned values assigned to zero by default
+            }
+
+          
         }
 
         public void removeCirteria(string criteriaToRemove)

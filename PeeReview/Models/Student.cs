@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PeeReview.Models
 {
@@ -25,9 +26,11 @@ namespace PeeReview.Models
             //TODO find group by name 
         }
 
-        public void leaveGroup(string groupName)
+        public void leaveGroup(string PassedID)
         {
-            //TODO find group by name 
+            var item = Groups.SingleOrDefault(x => x.ID == PassedID);
+            if (item != null)
+                Groups.Remove(item);
         }
         
     }
