@@ -17,9 +17,7 @@ namespace PeeReview.Models
         
         public Evaluation Evaluation { get; private set; }
         public Assessment Assessment { get; private set; }
-
-        public CalculateAverageEvaluationsStrategyDefault averageCalculator { get; set; }
-
+        
         //file 
         public defaultSetUniqueID IDSetter { get; } 
 

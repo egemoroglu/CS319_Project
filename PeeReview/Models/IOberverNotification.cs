@@ -5,6 +5,7 @@ using System.Threading;
 namespace PeeReview.Models
 {
     public interface IObserverNotification
+    //This needs to be connected with the views and models once done
     {
        // Receive update from subject
         void Update(SubjectNotification subject,List<Notification> notifications, string title, string content);

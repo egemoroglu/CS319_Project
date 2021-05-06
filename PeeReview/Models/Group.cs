@@ -27,10 +27,10 @@ namespace PeeReview.Models
         public Course parentCourse { get; set; }
 
         public Evaluation GroupEvaluation { get; private set; }
-        public GroupAnalysisCalculationStrategy studentAnalysis { get; private set; }
-        public SubmissionGroupsAnalysisCalculationStrategy SubmissionAnalysis { get; private set; }
-        
-        
+      
+        //this isa  strategy that is used in graphs as they should be, bu they are useful here for raw data for instructor
+        public AnalysisCalculationStrategy AnalysisStrategy { get; private set; }
+       
         public List<Student> students { get; private set; }
         public List<Project> projects{ get; private set; }
         public List<Grader> graders{ get; private set; }
@@ -89,6 +89,7 @@ namespace PeeReview.Models
 
         public string calcChem()
         {
+            GroupAnalysisCalculationStrategy studentAnalysis = new GroupAnalysisCalculationStrategy();
              chemstryPoint = studentAnalysis.calcChemsitry(this);
             switch (chemstryPoint)
             {
@@ -123,32 +124,34 @@ namespace PeeReview.Models
         }
         public Dictionary<string, string> gethighestStudentInEachCriteria()
         {
-
-            return studentAnalysis.highOutlierEachCriteria(this); //can use names to retrieve students if necessary fo rany features
+            AnalysisStrategy = new GroupAnalysisCalculationStrategy();
+            return AnalysisStrategy.highOutlierEachCriteria(this); //can use names to retrieve students if necessary fo rany features
         }
         public Dictionary<string, string> getLowestStudentInEachCriteria()
         {
-
-            return studentAnalysis.lowOutlierEachCriteria(this);//can use names to retrieve students if necessary fo rany features
+            AnalysisStrategy = new GroupAnalysisCalculationStrategy();
+            return AnalysisStrategy.lowOutlierEachCriteria(this);//can use names to retrieve students if necessary fo rany features
         }
         public Dictionary<string, string> gethighestAssignmentInEachCriteria()
         {
-
-            return SubmissionAnalysis.highOutlierEachCriteria(this); //can use names to retrieve assignment if necessary fo rany features
+            AnalysisStrategy = new SubmissionGroupsAnalysisCalculationStrategy();
+            return AnalysisStrategy.highOutlierEachCriteria(this); //can use names to retrieve assignment if necessary fo rany features
         }
         public Dictionary<string, string> getLowestAssignmentInEachCriteria()
         {
-
-            return SubmissionAnalysis.lowOutlierEachCriteria(this);//can use names to retrieve assignment if necessary fo rany features
+            AnalysisStrategy = new SubmissionGroupsAnalysisCalculationStrategy();
+            return AnalysisStrategy.lowOutlierEachCriteria(this);//can use names to retrieve assignment if necessary fo rany features
         }
 
         public Dictionary<string, double> getAverageOfAveragesStudent()
         {
-            return studentAnalysis.calcAvgOfAvgs(this);
+            AnalysisStrategy = new GroupAnalysisCalculationStrategy();
+            return AnalysisStrategy.calcAvgOfAvgs(this);
         }
-        public Dictionary<string, double> getAverageOfAveragesAssignments()
+        public Dictionary<string, double> getAverageOfAveragesSubmission()
         {
-            return SubmissionAnalysis.calcAvgOfAvgs(this);
+            AnalysisStrategy = new SubmissionGroupsAnalysisCalculationStrategy();
+            return AnalysisStrategy.calcAvgOfAvgs(this);
         }
 
     }
